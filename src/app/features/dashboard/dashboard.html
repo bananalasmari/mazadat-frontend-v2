@@ -1,0 +1,39 @@
+<div class="row g-3">
+    <div class="animate-fade-up animate-delay-0 d-block d-md-flex justify-content-lg-between">
+        <div>
+            <app-typography [tag]="'h2'" [variant]="'h3'" [weight]="'bold'" [muted]="false" [color]="'default'"
+                [align]="'start'" [transform]="'none'" [truncate]="false" [extraClass]="''"
+                [text]="'sideMenu.dashboard.label' | t"></app-typography>
+            <app-typography [tag]="'p'" [variant]="'body'" [weight]="'normal'" [muted]="false" [color]="'default'"
+                [align]="'start'" [transform]="'none'" [truncate]="false" [extraClass]="''"
+                [text]="'sideMenu.dashboard.description' | t"></app-typography>
+        </div>
+        <div class="d-flex gap-2 align-items-center">
+            <app-dropdown [options]="dateRangeOptions()" [value]="selectedDateRange()"
+                (valueChange)="selectedDateRange.set($event ?? '30')"
+                [placeholder]="'dashboard.dateRangePlaceholder' | t" size="sm"
+                [ariaLabel]="'dashboard.dateRangePlaceholder' | t" />
+            <app-button [label]="'dashboard.customizePage' | t" variant="gray" size="sm" icon="pi pi-cog"
+                iconPosition="start" (clicked)="onCustomizePage()" />
+            <app-button [label]="'dashboard.export' | t" variant="gray" size="sm" icon="pi pi-download"
+                iconPosition="start" (clicked)="onExport()" />
+        </div>
+    </div>
+    <div class="animate-fade-up animate-delay-1 mt-4">
+        <app-quick-links />
+    </div>
+    <div class="animate-fade-up animate-delay-2 mt-4">
+        <app-dashboard-stats />
+    </div>
+    <div class="animate-fade-up animate-delay-3 mt-4">
+        <app-dashboard-charts />
+    </div>
+    <div class="row g-3 animate-fade-up animate-delay-4">
+        <div class="col-12 col-lg-6">
+            <app-active-listings />
+        </div>
+        <div class="col-12 col-lg-6">
+            <app-latest-auctions />
+        </div>
+    </div>
+</div>

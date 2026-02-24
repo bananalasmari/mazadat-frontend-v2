@@ -1,0 +1,4 @@
+/* min-height: 0 so flex child can scroll (Bootstrap has no utility for this) */
+.inner-layout__body {
+  min-height: 0;
+}

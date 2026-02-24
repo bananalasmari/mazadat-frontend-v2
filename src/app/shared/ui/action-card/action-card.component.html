@@ -1,0 +1,23 @@
+<div class="card h-100">
+  <div class="card-body d-flex flex-column ">
+    <div class="d-flex align-items-start gap-3 mb-3">
+      <div class="action-card__icon-box rounded-3 d-flex align-items-center justify-content-center">
+        <i [class]="icon()" class="action-card__icon" aria-hidden="true"></i>
+      </div>
+      <div class="min-w-0 flex-grow-1">
+        <app-typography tag="h3" variant="h5" weight="bold" extraClass="mb-2 action-card__title">
+          {{ title() }}
+        </app-typography>
+        <app-typography tag="p" variant="body" extraClass="mb-0 action-card__description" [text]="description()" />
+      </div>
+    </div>
+    <div class="mt-auto pt-2">
+      <app-button
+        [label]="buttonLabel()"
+        variant="primary"
+        extraClass="w-100"
+        (clicked)="buttonClicked.emit()"
+      />
+    </div>
+  </div>
+</div>

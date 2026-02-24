@@ -1,0 +1,113 @@
+<div class="search-card-wrapper position-relative">
+  <div class="card border-0 shadow-sm rounded-3 overflow-hidden mb-3">
+    <div class="card-body p-3 p-md-4">
+      <div class="row g-3 align-items-center">
+      <!-- Title + count (RTL: right side) -->
+      <div class="col-12 col-lg">
+        <app-typography
+          tag="h2"
+          variant="h4"
+          weight="bold"
+          [text]="title()"
+          extraClass="mb-1"
+        />
+        @if (countText()) {
+          <app-typography
+            tag="p"
+            variant="small"
+            [muted]="true"
+            [text]="countText()"
+            extraClass="mb-0"
+          />
+        }
+      </div>
+
+      <!-- Export + View toggle (RTL: left side) -->
+      <div class="col-12 col-lg-auto order-lg-0 d-flex flex-wrap gap-2 align-items-center justify-content-between justify-content-lg-end">
+        @if (exportLabel()) {
+          <app-button
+            [label]="exportLabel()"
+            variant="gray"
+            size="md"
+            icon="pi pi-download"
+            iconPosition="start"
+            extraClass="rounded-2"
+            (clicked)="onExport()"
+          />
+        }
+        <!-- <div class="btn-group rounded-2 search-card__view-toggle" role="group" aria-label="View mode">
+          <app-button
+            [iconOnly]="true"
+            icon="pi pi-th-large"
+            variant="outline"
+            size="sm"
+            ariaLabel="Grid view"
+            [extraClass]="viewMode() === 'grid' ? 'rounded-start-2 search-card__view-active' : 'rounded-start-2'"
+            (clicked)="setViewMode('grid')"
+          />
+          <app-button
+            [iconOnly]="true"
+            icon="pi pi-list"
+            variant="outline"
+            size="sm"
+            ariaLabel="List view"
+            [extraClass]="viewMode() === 'list' ? 'rounded-end-2 search-card__view-active' : 'rounded-end-2'"
+            (clicked)="setViewMode('list')"
+          />
+        </div> -->
+      </div>
+
+      <!-- Search row -->
+      <div class="col-12 order-lg-1">
+        <div class="d-flex flex-md-row flex-column gap-2 align-items-stretch">
+          <div class="flex-grow-1 min-w-0 position-relative" (keydown.enter)="$event.preventDefault(); onSearchSubmit()">
+            <app-input
+              containerClass="mb-0"
+              [placeholder]="searchPlaceholder()"
+              iconLeft="pi pi-search"
+              [ngModel]="getSearchValue()"
+              (ngModelChange)="onSearchChange($event)"
+              ariaLabel="Search"
+            />
+            @if (hasSearchValue()) {
+              <button
+                type="button"
+                class="position-absolute top-50 translate-middle-y search-card__clear-btn"
+                (click)="onSearchChange('')"
+                aria-label="Clear search"
+              >
+                <i class="pi pi-times" aria-hidden="true"></i>
+              </button>
+            }
+          </div>
+          @if (advancedSearchLabel()) {
+            <app-button
+              [label]="advancedSearchLabel()"
+              variant="outline"
+              size="md"
+              icon="pi pi-filter"
+              iconPosition="start"
+              extraClass="rounded-2 flex-shrink-0"
+              (clicked)="openAdvancedSearchDrawer()"
+            />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-drawer
+  [visible]="drawerVisible()"
+  (visibleChange)="onDrawerVisibleChange($event)"
+  [position]="drawerPosition()"
+  [header]="getDrawerHeader()"
+  [style]="{ width: drawerWidth() }"
+  [modal]="true"
+  [dismissible]="true"
+  [showCloseIcon]="true"
+  [appendTo]="'body'"
+  [styleClass]="getDrawerStyleClass()"
+>
+  <ng-content select="[advancedSearchContent]"></ng-content>
+</p-drawer>

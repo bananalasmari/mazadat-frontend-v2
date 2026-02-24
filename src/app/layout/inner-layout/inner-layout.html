@@ -1,0 +1,13 @@
+<div class="d-flex flex-column min-vh-100">
+  <app-header class="flex-shrink-0" (menuClick)="sideMenuOpen.set(true)" />
+  <div class="d-flex flex-grow-1 inner-layout__body">
+    <app-side-menu
+      [open]="sideMenuOpen()"
+      (closed)="sideMenuOpen.set(false)"
+    />
+    <main class="container-fluid flex-grow-1 overflow-auto p-3" (click)="onMainClick()">
+      <router-outlet />
+    </main>
+  </div>
+  <app-footer class="flex-shrink-0" />
+</div>

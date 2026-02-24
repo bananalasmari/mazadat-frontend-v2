@@ -1,0 +1,40 @@
+<section class="bg-mzd p-3">
+  <div class="d-flex align-items-center gap-2">
+    <span class="quick-links-section-icon" role="img" aria-hidden="true"></span>
+    <app-typography tag="h4" variant="h4" weight="bold" extraClass="mb-1" [text]="section()?.title ?? ''" />
+  </div>
+  <app-typography tag="p" variant="small" color="muted" extraClass="mb-3" [text]="section()?.subtitle ?? ''" />
+
+  @if (loading()) {
+  <div class="d-flex flex-nowrap gap-3 pb-2">
+    @for (n of [1,2,3]; track n) {
+    <div class="card shadow-sm rounded-3 border-0 flex-shrink-0 placeholder-glow"
+      style="min-width: 360px; max-width: 320px; height: 180px;">
+      <div class="card-body placeholder"></div>
+    </div>
+    }
+  </div>
+  } @else if (items().length === 0) {
+  <app-typography tag="p" variant="small" color="muted" extraClass="mb-0" [text]="emptyMessage()" />
+  } @else {
+  <div class="d-flex flex-nowrap overflow-x-auto gap-3 pb-2 w-100 quick-links-scroll"
+    style="scrollbar-width: thin; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;" role="region"
+    [attr.aria-label]="section()?.title ?? ''">
+    @for (item of items(); track item.id) {
+    @switch (item.type) {
+    @case ('sales_agreement') {
+    <app-quick-link-sales-agreement-card [item]="item" (reviewAgreement)="onReviewAgreement($event)" />
+    }
+    @case ('vehicle_sale') {
+    <app-quick-link-vehicle-sale-card [item]="item" [status]="getItemStatus(item.id)" [acceptedLabel]="acceptedLabel()"
+      [rejectedLabel]="rejectedLabel()" [demoCarImage]="demoCarImage" (rejectSale)="confirmRejectSale($event)"
+      (acceptSale)="confirmAcceptSale($event)" />
+    }
+    @case ('vehicle_dues') {
+    <app-quick-link-vehicle-dues-card [item]="item" (continueRegistration)="onContinueRegistration($event)" />
+    }
+    }
+    }
+  </div>
+  }
+</section>

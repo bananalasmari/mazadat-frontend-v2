@@ -1,0 +1,34 @@
+/* Actions cell: don't clip the trigger; menu is appended to body for correct positioning */
+:host ::ng-deep .p-datatable-tbody > tr > td {
+  overflow: visible;
+}
+
+/* Skeleton loading: fit within cell */
+:host ::ng-deep .data-table-skeleton.p-skeleton {
+  display: block;
+  min-width: 4rem;
+}
+
+/* Status tag in table cell */
+:host ::ng-deep .p-tag.p-tag-rounded {
+  border-radius: 8px;
+}
+
+/* Empty state: center image and text */
+:host ::ng-deep .data-table-empty-cell {
+  text-align: center;
+  vertical-align: middle;
+
+  .data-table-empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+
+    img {
+      display: block;
+    }
+  }
+}

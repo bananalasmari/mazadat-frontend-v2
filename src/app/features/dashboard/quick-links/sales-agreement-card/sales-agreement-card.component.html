@@ -1,0 +1,27 @@
+<div class="card shadow-sm rounded-3 border-0 flex-shrink-0 h-100" style="min-width: 330px; max-width: 361px; min-height: 200px;">
+  <div class="card-body position-relative d-flex flex-column h-100">
+    <div class="flex-grow-1 min-h-0">
+      @if (item().important) {
+        <span class="position-absolute" style="top: 1rem; left: 1rem;">
+          <app-tag
+            [value]="item().badgeText ?? ''"
+            severity="danger"
+            icon="pi pi-star-fill"
+          />
+        </span>
+      }
+      <div class="d-flex align-items-start gap-2 mb-2">
+        @if (item().imageUrl) {
+          <img [src]="item().imageUrl" alt="" class="rounded flex-shrink-0 object-fit-cover" style="width: 2.5rem; height: 2.5rem; object-fit: cover;" />
+        } @else {
+          <span class="rounded bg-mzd bg-opacity-10 text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 2.5rem; height: 2.5rem;"><i [class]="item().icon || 'pi pi-file'" aria-hidden="true"></i></span>
+        }
+        <app-typography tag="h4" variant="h6" weight="bold" extraClass="mb-0" [text]="item().title ?? ''" />
+      </div>
+      <app-typography tag="p" variant="small" color="muted" extraClass="mb-0" [text]="item().body ?? ''" />
+    </div>
+    <div class="mt-auto pt-2 flex-shrink-0">
+      <app-button [label]="item().buttonText ?? ''" variant="primary" size="sm" (clicked)="reviewAgreement.emit(item().id)" />
+    </div>
+  </div>
+</div>

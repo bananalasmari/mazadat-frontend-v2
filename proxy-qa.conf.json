@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://mazadat-api-qa.apps.devocp4.elm.sa/api",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "ws": true
+  }
+}

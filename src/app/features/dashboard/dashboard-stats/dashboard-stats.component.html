@@ -1,0 +1,25 @@
+<div class="dashboard-stats row g-3 mt-2">
+  @for (item of items(); track item.titleKey) {
+    <div class="col-12 col-sm-6 col-xl-3">
+      <div class="dashboard-stat-card rounded-3 p-3 h-100">
+        <app-typography tag="p" variant="small" color="muted" extraClass="mb-2" [text]="title(item)" />
+        <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+          <div class="d-flex gap-1 flex-wrap">
+            <app-typography tag="p" variant="h4" weight="bold" extraClass="mb-0" [text]="formatValue(item)" />
+            @if (isCurrency(item)) {
+              <img [src]="riyalIconUrl" alt="" class="dashboard-stat-riyal-icon" />
+            }
+          </div>
+          <span class="dashboard-stat-icon rounded-2 d-flex align-items-center justify-content-center flex-shrink-0">
+            <i [class]="item.icon" aria-hidden="true"></i>
+          </span>
+        </div>
+        <p class="mb-0 small d-flex align-items-center gap-1" [class.text-success]="item.trendPositive" [class.text-danger]="!item.trendPositive">
+          <i class="pi" [class.pi-arrow-up]="item.trendPositive" [class.pi-arrow-down]="!item.trendPositive" aria-hidden="true"></i>
+          <span>{{ trendSign(item.trendPositive) }}{{ item.trendPercent }}%</span>
+          <span class="text-body-secondary">{{ trendLabel(item) }}</span>
+        </p>
+      </div>
+    </div>
+  }
+</div>

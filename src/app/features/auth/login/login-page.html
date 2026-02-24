@@ -1,0 +1,173 @@
+@if (i18n.ready()) {
+      <div class="row align-items-center g-4 g-lg-5 my-5" dir="ltr">
+        <!-- Left: login card -->
+        <div class="col-12 col-lg-5">
+          <div class="card auth-card border-0 mx-auto login-anim-fade-up" [attr.dir]="i18n.lang() === 'ar' ? 'rtl' : 'ltr'">
+            <div class="card-body p-4 p-md-5">
+              <div class="login-step-panel">
+                <div class="mb-4">
+                  <app-typography tag="h1" variant="h3" weight="bold" align="center" extraClass="mb-1">
+                    {{ 'login.title' | t }}
+                  </app-typography>
+                  <app-typography tag="p" variant="small" [muted]="true" align="center" extraClass="mb-0">
+                    {{ 'login.subtitle' | t }}
+                  </app-typography>
+                </div>
+
+                <p-tabs class="login-account-tabs mb-4" [value]="accountType()" (valueChange)="accountType.set($event === 'personal' ? 'personal' : 'business')">
+                  <p-tablist>
+                    <p-tab value="business">{{ 'login.businessAccount' | t }}</p-tab>
+                    <p-tab value="personal">{{ 'login.personalAccount' | t }}</p-tab>
+                  </p-tablist>
+                </p-tabs>
+
+                @if (error()) {
+                  <app-alert severity="error" [text]="error()!" extraClass="mb-3" />
+                }
+
+                <form (ngSubmit)="submitCredentials()" class="needs-validation" novalidate #credentialsForm="ngForm">
+                  <app-input
+                    id="emailOrId"
+                    [label]="'login.emailOrIdLabel' | t"
+                    [placeholder]="'login.emailOrIdPlaceholder' | t"
+                    type="text"
+                    size="lg"
+                    [required]="true"
+                    [autocomplete]="'username'"
+                    [ngModel]="username"
+                    (ngModelChange)="onUsernameInput($event)"
+                    (blurred)="onEmailOrIdBlur()"
+                    name="emailOrId"
+                    [error]="emailOrIdError"
+                    [maxlength]="username.includes('@') ? null : 9"
+                    [inputmode]="username.includes('@') ? 'email' : 'text'"
+                    containerClass="mb-3"
+                  />
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label small mb-1">
+                      {{ 'login.passwordLabel' | t }}
+                    </label>
+                    <p-password
+                      inputId="password"
+                      [ngModel]="password"
+                      (ngModelChange)="onPasswordInput($event)"
+                      name="password"
+                      required
+                      [toggleMask]="true"
+                      [feedback]="false"
+                      [invalid]="attemptedSubmit && !password.trim()"
+                      [placeholder]="'login.passwordPlaceholder' | t"
+                      [inputStyleClass]="'form-control form-control-lg'"
+                      styleClass="w-100"
+                    />
+                    @if (attemptedSubmit && !password.trim()) {
+                      <p-message severity="error" icon="pi pi-times-circle" [text]="'login.passwordRequired' | t" size="small" styleClass="mt-1 w-100" />
+                    }
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="rememberMe"
+                        [(ngModel)]="rememberMe"
+                        name="rememberMe"
+                      />
+                      <label class="form-check-label small" for="rememberMe">{{ 'login.rememberMe' | t }}</label>
+                    </div>
+                    <a class="small text-decoration-none" href="javascript:void(0)">{{ 'login.forgotPassword' | t }}</a>
+                  </div>
+
+                  <app-button
+                    type="submit"
+                    variant="primary"
+                    extraClass="w-100 btn-lg"
+                    [disabled]="!credentialsFormValid"
+                    [loading]="loading()"
+                    [label]="loading() ? ('login.loading' | t) : ('login.submit' | t)"
+                  />
+
+                  <app-typography tag="p" variant="small" [muted]="true" align="center" extraClass="mt-3 mb-0">
+                    {{ 'login.helpText' | t }}
+                  </app-typography>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: marketing content -->
+        <div class="col-12 col-lg-7">
+          <div class="ps-lg-4 login-anim-fade-in" [attr.dir]="i18n.lang() === 'ar' ? 'rtl' : 'ltr'">
+            <app-typography tag="h2" variant="h2" weight="light" extraClass="display-6 mb-2">
+              {{ 'login.heroTitle' | t }}
+            </app-typography>
+            <app-typography tag="h2" variant="h2" weight="bold" extraClass="display-6 mb-2" color="primary">
+              {{ 'login.carsmzd' | t }}
+            </app-typography>
+            <app-typography tag="p" variant="body" [muted]="true" extraClass="mb-4" [text]="'login.heroSubtitle' | t"></app-typography>
+
+            <div class="d-grid gap-3 pt-4" style="max-width: 44rem">
+              @for (b of benefits(); track $index) {
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="rounded-3 border bg-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px">
+                    <i [class]="benefitIconClass(b) + ' text-secondary'"></i>
+                  </div>
+                  <div>
+                    <app-typography tag="div" variant="body" weight="semibold" extraClass="mb-0">
+                      {{ b.title }}
+                    </app-typography>
+                    <app-typography tag="div" variant="small" [muted]="true" extraClass="mb-0">
+                      {{ b.body }}
+                    </app-typography>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="row align-items-center g-4 g-lg-5 my-5 login-skeleton-root">
+        <div class="col-12 col-lg-5">
+          <div class="card auth-card border-0 mx-auto login-skeleton-card">
+            <div class="card-body p-4 p-md-5">
+              <p-skeleton height="2.25rem" width="70%" styleClass="mb-2 login-skeleton-item"></p-skeleton>
+              <p-skeleton height="1rem" width="60%" styleClass="mb-4 login-skeleton-item"></p-skeleton>
+              <p-skeleton height="2.75rem" width="100%" borderRadius="999px" styleClass="mb-4 login-skeleton-item"></p-skeleton>
+
+              <p-skeleton height="0.75rem" width="40%" styleClass="mb-2 login-skeleton-item"></p-skeleton>
+              <p-skeleton height="3rem" width="100%" styleClass="mb-3 login-skeleton-item"></p-skeleton>
+
+              <p-skeleton height="0.75rem" width="35%" styleClass="mb-2 login-skeleton-item"></p-skeleton>
+              <p-skeleton height="3rem" width="100%" styleClass="mb-4 login-skeleton-item"></p-skeleton>
+
+              <p-skeleton height="3.25rem" width="100%" borderRadius="0.75rem" styleClass="mb-3 login-skeleton-item"></p-skeleton>
+              <p-skeleton height="0.9rem" width="80%" styleClass="login-skeleton-item"></p-skeleton>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="ps-lg-4 login-skeleton-hero">
+            <p-skeleton height="2.25rem" width="60%" styleClass="mb-2 login-skeleton-item"></p-skeleton>
+            <p-skeleton height="2.25rem" width="45%" styleClass="mb-3 login-skeleton-item"></p-skeleton>
+            <p-skeleton height="1rem" width="85%" styleClass="mb-4 login-skeleton-item"></p-skeleton>
+
+            <div class="d-grid gap-3 pt-4" style="max-width: 44rem">
+              @for (s of [1, 2, 3]; track s) {
+                <div class="d-flex gap-3 align-items-start login-skeleton-row" [style.animation-delay]="(s - 1) * 80 + 'ms'">
+                  <p-skeleton width="40px" height="40px" borderRadius="12px" styleClass="login-skeleton-item"></p-skeleton>
+                  <div style="flex: 1">
+                    <p-skeleton height="1rem" width="45%" styleClass="mb-2 login-skeleton-item"></p-skeleton>
+                    <p-skeleton height="0.9rem" width="90%" styleClass="login-skeleton-item"></p-skeleton>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }

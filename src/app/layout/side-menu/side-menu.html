@@ -1,0 +1,54 @@
+@if (open()) {
+  <button
+    type="button"
+    class="side-menu__backdrop"
+    aria-label="Close"
+    (click)="closed.emit()"
+  ></button>
+}
+<div
+  class="side-menu-wrapper"
+  [class.side-menu-wrapper--open]="open()"
+  [class.side-menu-wrapper--no-transition]="suppressTransition()"
+>
+  <nav class="side-menu" [attr.dir]="dir()" role="navigation" [attr.aria-label]="'sideMenu.sectionTitle' | t" (click)="$event.stopPropagation()">
+    <div class="side-menu__header">
+      <h5 class="side-menu__title">{{ 'sideMenu.sectionTitle' | t }}</h5>
+      <p-button
+        icon="pi pi-times"
+        [rounded]="true"
+        [text]="true"
+        severity="secondary"
+        class="side-menu__close d-md-none"
+        (onClick)="closed.emit()"
+        [attr.aria-label]="'common.close' | t"
+      />
+    </div>
+    <ul class="side-menu__list">
+      @for (item of menuItems(); track item.path) {
+        <li class="side-menu__item">
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="side-menu__link--active"
+            [routerLinkActiveOptions]="{ exact: item.exact }"
+            class="side-menu__link"
+            (click)="closed.emit()"
+          >
+          <i [class]="'pi ' + item.icon" class="side-menu__link-icon" aria-hidden="true"></i>
+            <span class="side-menu__link-indicator" aria-hidden="true"></span>
+            <span class="side-menu__link-content">
+              <span class="side-menu__link-label">{{ item.labelKey | t }}</span>
+              <span class="side-menu__link-desc">{{ item.descriptionKey | t }}</span>
+            </span>
+          </a>
+        </li>
+      }
+    </ul>
+    <img
+      src="/assets/illustrations/side-pattren.svg"
+      alt=""
+      class="side-menu__pattern"
+      aria-hidden="true"
+    />
+  </nav>
+</div>

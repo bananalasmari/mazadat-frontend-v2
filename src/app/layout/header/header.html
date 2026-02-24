@@ -1,0 +1,67 @@
+<header [attr.dir]="i18n.lang() === 'ar' ? 'rtl' : 'ltr'">
+    <div class="bg-white border-bottom py-1 mb-4 shadow-sm">
+        <div class="container-fluid px-0 px-md-5">
+            <div class="d-flex flex-wrap align-items-center gap-2 py-2">
+                <!-- Start: Logo + menu (mobile) -->
+                <div class="d-flex align-items-center flex-shrink-0">
+                    <p-button
+                        icon="pi pi-bars"
+                        [rounded]="true"
+                        [text]="true"
+                        severity="secondary"
+                        class="d-md-none me-0 me-md-2"
+                        (onClick)="menuClick.emit()"
+                        [attr.aria-label]="'header.openMenu' | t"
+                    />
+                    <a routerLink="/dashboard"
+                        class="d-flex align-items-center gap-2 text-decoration-none text-dark"
+                        aria-label="Mazadat">
+                        <img src="/assets/logos/logo.svg" alt="" class="app-header__logo-img" />
+                    </a>
+                </div>
+
+                <!-- End: Search, Notifications, Language, User -->
+                <div class="d-flex align-items-center flex-shrink-0 ms-auto">
+                    <app-header-search
+                        [placeholder]="'header.searchPlaceholder' | t"
+                        [searchLabel]="'header.search' | t"
+                        [closeLabel]="'common.close' | t"
+                        [iconPosition]="i18n.lang() === 'ar' ? 'right' : 'left'"
+                        maxWidth="20rem"
+                    />
+                    <app-notification-button
+                        [count]="notificationCount()"
+                        [tooltipLabel]="'header.notifications' | t"
+                        [panelTitle]="'header.notifications' | t"
+                        [emptyMessage]="'header.notificationsEmpty' | t"
+                        [notifications]="notificationItems()"
+                        (clicked)="onNotificationsClick()"
+                        (notificationClick)="onNotificationClick($event)"
+                    />
+
+                    <p-button
+                        icon="pi pi-globe"
+                        [label]="i18n.lang() === 'ar' ? 'EN' : 'عــربي'"
+                        [iconPos]="i18n.lang() === 'ar' ? 'left' : 'right'"
+                        [text]="true"
+                        severity="secondary"
+                        (onClick)="i18n.toggleLang()"
+                        [attr.aria-label]="'header.language' | t"
+                    />
+
+                    <app-user-menu-button
+                        [displayName]="userDisplayName()"
+                        [initials]="userInitials()"
+                        [profileLabel]="userDisplayName()"
+                        [menuVisible]="userMenuVisible()"
+                        (openMenu)="userMenu.toggle($event)"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p-menu #userMenu [model]="userMenuItems()" [popup]="true" (onHide)="userMenuVisible.set(false)"
+        (onShow)="userMenuVisible.set(true)" />
+    <p-confirmDialog />
+</header>

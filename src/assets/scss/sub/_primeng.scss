@@ -1,0 +1,89 @@
+.p-tab {
+  text-align: center;
+}
+
+/* PrimeNG inputs: focus use brand #24205B instead of default green */
+.p-inputtext:enabled:focus,
+.p-inputtext:enabled:focus-visible,
+.p-password input:focus,
+.p-password input:focus-visible {
+  border-color: #24205B;
+  box-shadow: 0 0 0 0.2rem rgba(36, 32, 91, 0.25);
+  outline: 0;
+}
+.p-inputtext:enabled:hover,
+.p-password input:hover {
+  border-color: rgba(36, 32, 91, 0.4);
+}
+
+/* PrimeNG Skeleton: use primary color #24205B for loading shimmer */
+.login-page .p-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(36, 32, 91, 0.08) 0%,
+    rgba(36, 32, 91, 0.18) 50%,
+    rgba(36, 32, 91, 0.08) 100%
+  );
+  background-size: 200% 100%;
+  animation: p-skeleton-loading 1.2s ease-in-out infinite;
+}
+
+@keyframes p-skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+p-inputotp {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.p-tag {
+  font-weight: var(--p-tag-font-weight);
+}
+
+.p-tag-success {
+  background: #198754 !important;
+}
+
+.p-tag-rounded {
+  border-radius: 8px !important;
+}
+
+/* Higher specificity so override wins without !important (PrimeNG theme loads after) */
+.p-tag.p-tag-warn {
+  border: 1px solid #FFD6A7;
+  background: #FFF7ED;
+  color: #CA3500;
+}
+
+.p-tag.p-tag-info {
+  color: #363F72;
+  border: 1px solid #D5D9EB;
+  background: #F8F9FC;
+}
+
+.p-datatable {
+  position: relative;
+  display: block;
+  border-right: 1px solid #E5E7EB;
+}
+.p-datatable-gridlines .p-datatable-tbody > tr > td {
+  text-align: center;
+}
+.p-datatable-gridlines .p-datatable-thead > tr > th {
+  text-align: center;
+}
+
+/* Drawer overlay mask (when [modal]="true") – ensure dimming is visible */
+.p-drawer-mask {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.p-select {
+  width: 100%
+}

@@ -1,0 +1,31 @@
+<div class="min-vh-100 d-flex flex-column login-page position-relative">
+  @if (showLoader()) {
+    <div class="login-global-overlay" role="status" aria-live="polite" aria-label="Loading">
+      <div class="login-global-loader">
+        <div class="login-loader-spinner"></div>
+        <img src="/assets/logos/logo.svg" alt="" class="login-loader-logo" />
+      </div>
+    </div>
+  }
+
+  <div class="container-xl flex-grow-1">
+    <div class="d-flex align-items-center justify-content-between py-3">
+      <a class="d-flex align-items-center gap-2 text-decoration-none" href="./" aria-label="Mazadat">
+        <img src="/assets/logos/logo.svg" alt="Mazadat" />
+      </a>
+
+      <div class="d-flex align-items-center gap-2">
+        <app-button
+          variant="outline"
+          [label]="i18n.lang() === 'ar' ? 'EN' : 'عــربي'"
+          (clicked)="i18n.toggleLang()"
+        />
+        <a class="btn btn-light border" href="/">
+          {{ 'common.home' | t }}
+        </a>
+      </div>
+    </div>
+
+    <ng-content />
+  </div>
+</div>

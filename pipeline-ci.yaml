@@ -1,0 +1,25 @@
+# This file is used to take project/repository specific metadata e.g. Nexus IQ, ACS Scanning
+name: pipeline-ci
+version: 1.0.0
+scanners:
+  nexusiq:
+    enabled: true
+    dockerimage: docker-public/node:24.13.1-trixie-slim
+    buildcommand: npm install --production --cache /cache/npm-cache --force --verbose --no-audit
+    scantarget: "package-lock.json"
+    targetdir: .
+  acs:
+    enabled: true
+  coverity:
+    enabled: true
+    dockerimage: docker-public/node:24.13.1-trixie-slim
+    buildcommand: npm install --production --cache /cache/npm-cache --force --verbose --no-audit
+# stages:
+#   skipmaster: No
+#   skipci: No
+# ci_values:
+#     - name: "app"
+#       image:
+#           tag: "${PIPELINE_CI_IMAGE_TAG}"
+#       envVars:
+#           APP_VERSION: "${PIPELINE_CI_IMAGE_TAG}"

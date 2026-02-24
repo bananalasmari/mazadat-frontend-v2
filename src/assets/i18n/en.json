@@ -1,0 +1,234 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "home": "Home",
+    "close": "Close",
+    "noData": "No data",
+    "actions": "Actions"
+  },
+  "auth": {
+    "welcome": "Welcome,",
+    "login": "Login",
+    "logout": "Logout",
+    "logoutConfirmTitle": "Log out?",
+    "logoutConfirmMessage": "Are you sure you want to log out?",
+    "confirm": "Yes",
+    "cancel": "Cancel"
+  },
+  "login": {
+    "title": "Welcome to Mazadat",
+    "subtitle": "Login to continue to your account",
+    "businessAccount": "Business account",
+    "personalAccount": "Personal account",
+    "usernameLabel": "Email / National ID / Iqama",
+    "usernamePlaceholder": "Email, National ID, or Iqama",
+    "emailOrIdLabel": "Email or ID",
+    "emailOrIdPlaceholder": "Email or 9-digit National ID / Iqama",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "usernameRequired": "Email, National ID, or Iqama is required",
+    "usernameFormatInvalid": "Please enter a valid email or a 9-digit National ID / Iqama number.",
+    "passwordRequired": "Password is required",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "submit": "Login",
+    "loading": "Signing in...",
+    "helpText": "Need help? Contact support.",
+    "otpTitle": "Verification code",
+    "otpSubtitle": "Enter the 6-digit code to continue",
+    "otpSubtitle4": "Enter the 4-digit code to continue",
+    "otpLabel": "OTP code",
+    "otpPlaceholder": "------",
+    "verify": "Verify",
+    "verifying": "Verifying...",
+    "back": "Back to login",
+    "heroTitle": "Join the Platform",
+    "carsmzd": "Premium Car Auctions",
+    "heroSubtitle": "Discover the finest luxury and classic cars at exclusive auctions. Bid smart and drive home the car of your dreams",
+    "benefit1Title": "Trusted and secure auctions",
+    "benefit1Body": "All vehicles are certified and inspected by professional experts.",
+    "benefit2Title": "Exclusive auctions",
+    "benefit2Body": "Get exclusive opportunities to buy the rarest luxury vehicles.",
+    "benefit3Title": "Premium bidding experience",
+    "benefit3Body": "Intuitive interface and advanced bidding system for the ideal experience."
+  },
+  "header": {
+    "search": "Search",
+    "searchPlaceholder": "Search",
+    "notifications": "Notifications",
+    "notificationsEmpty": "No notifications yet",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "language": "Switch language",
+    "openMenu": "Open menu"
+  },
+  "nav": {
+    "routingDemo": "Routing Demo"
+  },
+  "sideMenu": {
+    "sectionTitle": "Administration Unit",
+    "dashboard": { "label": "Control Panel", "description": "Monitor your auction performance and manage your business" },
+    "vehicles": { "label": "My Vehicles", "description": "View and manage your vehicle inventory" },
+    "auctions": { "label": "My Vehicle Auctions", "description": "Browse and manage your auctions" },
+    "reports": { "label": "Reports", "description": "Export your reports" },
+    "invoices": { "label": "Invoices and Receipts", "description": "Manage invoices and payments" }
+  },
+  "vehiclesManagement": {
+    "searchCard": {
+      "title": "All Vehicles",
+      "count": "{{count}} vehicles available",
+      "searchPlaceholder": "Search for a vehicle by name or number...",
+      "filterRegistrationStatus": "Registration Status",
+      "filterCustomizeColumns": "Customize Columns",
+      "filterAdvancedSearch": "Advanced Search",
+      "exportReport": "Export Report"
+    },
+    "advancedSearch": {
+      "registrationNumber": "Registration Number",
+      "registrationNumberPlaceholder": "Enter vehicle registration number",
+      "chassisNumber": "Chassis Number",
+      "chassisNumberPlaceholder": "Enter vehicle chassis number",
+      "serialNumber": "Serial Number",
+      "serialNumberPlaceholder": "Enter vehicle serial number",
+      "yearOfManufacture": "Year of Manufacture",
+      "licensePlate": "License Plate",
+      "registrationStatus": "Registration Status",
+      "registrationStatusPlaceholder": "Select vehicle registration status on Mazadat platform",
+      "city": "City",
+      "cityPlaceholder": "Select city",
+      "instantSale": "Instant Sale",
+      "instantSalePlaceholder": "Is instant sale service added to the vehicle?",
+      "saleRisk": "Sale Risk",
+      "saleRiskPlaceholder": "Is there a sale risk on the vehicle?",
+      "securityRequired": "Security Required",
+      "securityRequiredPlaceholder": "Is the vehicle required for security?",
+      "keyAvailability": "Key Availability",
+      "keyAvailabilityPlaceholder": "Is the key available for the vehicle?",
+      "executedService": "Executed Service",
+      "executedServicePlaceholder": "Select the service performed on the vehicle",
+      "search": "Search",
+      "reset": "Reset",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "addVehicle": {
+      "title": "Add Vehicle",
+      "description": "List your vehicle on the platform so we can display it in the auction.",
+      "buttonLabel": "Add Vehicle"
+    },
+    "instantSale": {
+      "title": "Instant Sale Service",
+      "description": "You can add the direct sale option at the time of auction for your vehicles.",
+      "buttonLabel": "Start Service"
+    },
+    "tableReportTemplate": "Showing {rows} of {totalRecords} results",
+    "columns": {
+      "registrationNumber": "Registration Number",
+      "vehicle": "Vehicle",
+      "plate": "License Plate",
+      "platformStatus": "Registration Status on Platform",
+      "addDate": "Add Date",
+      "city": "City",
+      "actions": "Actions"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "dashboard": {
+    "dateRangeLast7": "Last 7 days",
+    "dateRangeLast30": "Last 30 days",
+    "dateRangeLast90": "Last 90 days",
+    "dateRangePlaceholder": "Date range",
+    "customizePage": "Customize Page",
+    "export": "Export",
+    "stats": {
+      "bidders": "Bidders",
+      "biddersTrend": "Registered",
+      "averageSalePrice": "Average Sale Price",
+      "averageSalePriceTrend": "This Month",
+      "activeAuctions": "Active Auctions",
+      "activeAuctionsTrend": "Active",
+      "totalRevenue": "Total Revenue",
+      "totalRevenueTrend": "Last 30 Days"
+    },
+    "charts": {
+      "mostSoldCarsTitle": "Most Sold Cars",
+      "mostSoldCarsSubtitle": "Distribution of Auctions by Car Brand",
+      "salesPerformanceTitle": "Sales Performance",
+      "salesPerformanceSubtitle": "Monthly Revenues",
+      "brandAudi": "Audi",
+      "brandPorsche": "Porsche",
+      "brandBmw": "BMW",
+      "brandLexus": "Lexus",
+      "brandMercedes": "Mercedes-Benz",
+      "brandOther": "Other",
+      "monthJan": "January",
+      "monthFeb": "February",
+      "monthMar": "March",
+      "monthApr": "April",
+      "monthMay": "May",
+      "monthJun": "June"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "subtitle": "Tasks and actions that require your immediate attention",
+      "empty": "No quick actions at the moment.",
+      "salesAgreement": {
+        "title": "Approval of Sales Agreement",
+        "body": "You must approve the sales policy to be able to start using auctions.",
+        "badge": "Important",
+        "button": "Review Agreement"
+      },
+      "vehicleSale": {
+        "title": "Approval of Vehicle Sale",
+        "vehicleName": "Porsche 911 GT3",
+        "purchaseType": "Immediate purchase",
+        "price": "95,000",
+        "reject": "Reject",
+        "accept": "Accept",
+        "rejectConfirmTitle": "Reject sale?",
+        "rejectConfirmMessage": "Are you sure you want to reject this vehicle sale?",
+        "acceptConfirmTitle": "Accept sale?",
+        "acceptConfirmMessage": "Are you sure you want to accept this vehicle sale?",
+        "acceptedLabel": "Accepted",
+        "rejectedLabel": "Rejected"
+      },
+      "vehicleDues": {
+        "title": "Payment of Vehicle Dues",
+        "body": "Lexus 600 LX awaiting registration process",
+        "button": "Continue Registration"
+      }
+    },
+    "activeListings": {
+      "title": "Active Listings",
+      "subtitle": "Available Cars",
+      "viewAll": "View All",
+      "download": "Download",
+      "filter": "Filter"
+    },
+    "latestAuctions": {
+      "title": "Latest Auctions",
+      "subtitle": "Latest 5 Auctions",
+      "viewAll": "View All",
+      "pending": "Pending",
+      "download": "Download",
+      "filter": "Filter"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} All rights reserved. ELM"
+  },
+  "home": {
+    "hello": "Hello",
+    "congrats": "Congratulations! Your app is running.",
+    "checkingAuth": "Checking authentication...",
+    "loginToMazadat": "Login to Mazadat"
+  }
+}
+

@@ -1,0 +1,97 @@
+<p-table
+  [value]="valueDisplayed()"
+  [columns]="columns()"
+  [filters]="tableFilters()"
+  [paginator]="true"
+  [rows]="rows()"
+  [totalRecords]="totalRecordsComputed()"
+  [paginatorPosition]="paginatorPosition()"
+  [showCurrentPageReport]="showCurrentPageReport()"
+  [currentPageReportTemplate]="currentPageReportTemplate()"
+  [showFirstLastIcon]="true"
+  [dataKey]="dataKey() ?? undefined"
+  [styleClass]="styleClass()"
+  [tableStyleClass]="'p-datatable-sm p-datatable-gridlines'"
+  (onFilter)="onTableFilter($event)"
+>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      @for (col of columns; track col.field) {
+        <th
+          [pSortableColumn]="col.sortable !== false ? col.field : undefined"
+          [attr.aria-sort]="null"
+        >
+          <span class="p-column-title px-2">{{ col.header }}</span>
+          @if (col.sortable !== false) {
+            <p-sortIcon [field]="col.field" />
+          }
+          @if (isColumnFilterable(col)) {
+            <p-columnFilter
+              [field]="col.field"
+              [type]="getColumnFilterType(col)"
+              display="menu"
+              [showApplyButton]="true"
+              [showClearButton]="true"
+            />
+          }
+        </th>
+      }
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      @for (col of columns; track col.field) {
+        <td>
+          @if (loading()) {
+            <p-skeleton
+              height="1.25rem"
+              width="100%"
+              styleClass="data-table-skeleton"
+            />
+          } @else {
+            @switch (col.cellType) {
+              @case ('tag') {
+                <app-tag
+                  [value]="getTagValue(rowData, col)"
+                  [severity]="getTagSeverity(rowData, col)"
+                  [rounded]="true"
+                />
+              }
+              @case ('actions') {
+                <p-button
+                  icon="pi pi-ellipsis-v"
+                  [rounded]="true"
+                  [text]="true"
+                  severity="secondary"
+                  (onClick)="actionMenu.toggle($event)"
+                  [ariaLabel]="'common.actions' | t"
+                />
+                <p-menu
+                  #actionMenu
+                  [model]="getActionMenuModel(rowData)"
+                  [popup]="true"
+                  [appendTo]="'body'"
+                  (onShow)="onActionMenuToggle(rowData, actionMenu)"
+                  (onSelect)="onMenuSelect($event, rowData)"
+                />
+              }
+              @default {
+                <span>{{ getCellValue(rowData, col) ?? '—' }}</span>
+              }
+            }
+          }
+        </td>
+      }
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage" let-columns>
+    <tr>
+      <td [attr.colspan]="columns?.length ?? 1" class="data-table-empty-cell">
+        <div class="data-table-empty-content">
+          <img src="../../../../assets/icons/empty-state.svg" alt="">
+          <h4 class="mt-4">{{ 'common.noData' | t }}</h4>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

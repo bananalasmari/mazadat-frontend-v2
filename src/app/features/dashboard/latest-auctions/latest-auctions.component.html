@@ -1,0 +1,46 @@
+<div class="dashboard-list-card rounded-3 p-3 p-md-4 h-100">
+  <div class="d-flex justify-content-between align-items-start mb-2">
+    <div class="text-end">
+      <app-typography tag="h4" variant="h5" weight="bold" extraClass="mb-1" [text]="title()" />
+      <app-typography tag="p" variant="small" color="muted" extraClass="mb-0" [text]="subtitle()" />
+    </div>
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-link btn-sm text-body-secondary p-0" [attr.aria-label]="downloadLabel()" (click)="onDownload()">
+        <i class="pi pi-download" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn-link btn-sm text-body-secondary p-0" [attr.aria-label]="filterLabel()" (click)="onFilter()">
+        <i class="pi pi-filter" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <ul class="list-unstyled mb-0">
+    @for (item of items(); track item.id) {
+      <li class="border-bottom pb-3 pt-3 border-light border-3">
+        <div class="d-flex justify-content-between flex-shrink-0">
+          <div class="d-flex align-items-center gap-4">
+            <img [src]="item.imageUrl" [alt]="item.carName" class="dashboard-list-thumb rounded flex-shrink-0" />
+            <div>
+              <app-typography tag="p" variant="body" weight="normal" extraClass="mb-0" [text]="item.carName" />
+              <app-typography tag="p" variant="small" color="muted" extraClass="mb-0" [text]="item.idDate" />
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-end flex-shrink-0">
+            <div class="d-flex align-items-center gap-1">
+              <app-typography tag="span" variant="body" weight="semibold" [text]="item.price" />
+              <img [src]="riyalIconUrl" alt="" class="dashboard-list-riyal" />
+            </div>
+            <app-tag [value]="pendingLabel()" severity="warn" extraClass="mt-1" />
+          </div>
+        </div>
+      </li>
+    }
+  </ul>
+
+  <div class="text-center pt-3">
+    <button type="button" class="btn btn-link text-primary p-0 text-decoration-none" (click)="onViewAll()">
+      {{ viewAllLabel() }}
+      <i class="pi pi-arrow-left ms-1" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
