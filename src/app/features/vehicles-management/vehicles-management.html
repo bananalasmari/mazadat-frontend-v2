@@ -1,97 +1,37 @@
 <div class="row g-3">
     <div class="animate-fade-up animate-delay-0 d-block d-md-flex justify-content-lg-between">
         <div>
-            <app-typography [tag]="'h2'" [variant]="'h3'" [weight]="'bold'" [muted]="false" [color]="'default'"
-                [align]="'start'" [transform]="'none'" [truncate]="false" [extraClass]="''"
-                [text]="'sideMenu.vehicles.label' | t"></app-typography>
-            <app-typography [tag]="'p'" [variant]="'body'" [weight]="'normal'" [muted]="false" [color]="'default'"
-                [align]="'start'" [transform]="'none'" [truncate]="false" [extraClass]="''"
-                [text]="'sideMenu.vehicles.description' | t"></app-typography>
+            <app-typography [tag]="'h2'" [variant]="'h3'" [weight]="'bold'" [muted]="false" [color]="'default'" [align]="'start'" [transform]="'none'" [truncate]="false" [extraClass]="''" [text]="'sideMenu.vehicles.label' | t"></app-typography>
+            <app-typography [tag]="'p'" [variant]="'body'" [weight]="'normal'" [muted]="false" [color]="'default'" [align]="'start'" [transform]="'none'" [truncate]="false" [extraClass]="''" [text]="'sideMenu.vehicles.description' | t"></app-typography>
         </div>
     </div>
     <div class="mzd-bg animate-fade-up animate-delay-1">
         <div class="row g-3 g-md-4">
             <div class="col-12 col-sm-6 col-lg-6">
-                <app-action-card
-                    [title]="'vehiclesManagement.addVehicle.title' | t"
-                    [description]="'vehiclesManagement.addVehicle.description' | t"
-                    [buttonLabel]="'vehiclesManagement.addVehicle.buttonLabel' | t"
-                    icon="pi pi-plus"
-                    (buttonClicked)="onAddVehicle()"
-                />
+                <app-action-card [title]="'vehiclesManagement.addVehicle.title' | t" [description]="'vehiclesManagement.addVehicle.description' | t" [buttonLabel]="'vehiclesManagement.addVehicle.buttonLabel' | t" icon="pi pi-plus" (buttonClicked)="onAddVehicle()" />
             </div>
             <div class="col-12 col-sm-6 col-lg-6">
-                <app-action-card
-                    [title]="'vehiclesManagement.instantSale.title' | t"
-                    [description]="'vehiclesManagement.instantSale.description' | t"
-                    [buttonLabel]="'vehiclesManagement.instantSale.buttonLabel' | t"
-                    icon="pi pi-bolt"
-                    (buttonClicked)="onInstantSale()"
-                />
+                <app-action-card [title]="'vehiclesManagement.instantSale.title' | t" [description]="'vehiclesManagement.instantSale.description' | t" [buttonLabel]="'vehiclesManagement.instantSale.buttonLabel' | t" icon="pi pi-bolt" (buttonClicked)="onInstantSale()" />
             </div>
         </div>
     </div>
     <div class="animate-fade-up animate-delay-2">
-        <app-search-card
-            [title]="'vehiclesManagement.searchCard.title' | t"
-            [countText]="searchCardCountText"
-            [searchPlaceholder]="'vehiclesManagement.searchCard.searchPlaceholder' | t"
-            [advancedSearchLabel]="'vehiclesManagement.searchCard.filterAdvancedSearch' | t"
-            [drawerHeader]="'vehiclesManagement.searchCard.filterAdvancedSearch' | t"
-            [drawerWidth]="'min(100%, 520px)'"
-            [drawerPosition]="'left'"
-            [exportLabel]="'vehiclesManagement.searchCard.exportReport' | t"
-            [exportData]="tableData"
-            [exportFileName]="'vehicles'"
-            [exportColumns]="vehicleExportColumns"
-            [viewMode]="viewMode()"
-            [query]="filterQuery()"
-            (queryChange)="filterQuery.set($event)"
-            (searchSubmit)="onSearchSubmit($event)"
-            (viewModeChange)="onViewModeChange($event)"
-        >
+        <app-search-card [title]="'vehiclesManagement.searchCard.title' | t" [countText]="searchCardCountText" [searchPlaceholder]="'vehiclesManagement.searchCard.searchPlaceholder' | t" [advancedSearchLabel]="'vehiclesManagement.searchCard.filterAdvancedSearch' | t" [drawerHeader]="'vehiclesManagement.searchCard.filterAdvancedSearch' | t" [drawerWidth]="'min(100%, 520px)'" [drawerPosition]="'left'" [exportLabel]="'vehiclesManagement.searchCard.exportReport' | t" [exportData]="tableData" [exportFileName]="'vehicles'" [exportColumns]="vehicleExportColumns" [viewMode]="viewMode()" [query]="filterQuery()" (queryChange)="filterQuery.set($event)" (searchSubmit)="onSearchSubmit($event)" (viewModeChange)="onViewModeChange($event)">
             <div advancedSearchContent class="p-3">
                 <form class="advanced-search-form" (ngSubmit)="onAdvancedSearchSubmit()">
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
-                            <app-input
-                                containerClass="mb-0"
-                                [label]="'vehiclesManagement.advancedSearch.registrationNumber' | t"
-                                [placeholder]="'vehiclesManagement.advancedSearch.registrationNumberPlaceholder' | t"
-                                [ngModel]="advancedRegistrationNumber()"
-                                (ngModelChange)="advancedRegistrationNumber.set($event)"
-                                name="advancedRegistrationNumber"
-                            />
+                            <app-input containerClass="mb-0" [label]="'vehiclesManagement.advancedSearch.registrationNumber' | t" [placeholder]="'vehiclesManagement.advancedSearch.registrationNumberPlaceholder' | t" [ngModel]="advancedRegistrationNumber()" (ngModelChange)="advancedRegistrationNumber.set($event)" name="advancedRegistrationNumber" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <app-input
-                                containerClass="mb-0"
-                                [label]="'vehiclesManagement.advancedSearch.chassisNumber' | t"
-                                [placeholder]="'vehiclesManagement.advancedSearch.chassisNumberPlaceholder' | t"
-                                [ngModel]="advancedChassisNumber()"
-                                (ngModelChange)="advancedChassisNumber.set($event)"
-                                name="advancedChassisNumber"
-                            />
+                            <app-input containerClass="mb-0" [label]="'vehiclesManagement.advancedSearch.chassisNumber' | t" [placeholder]="'vehiclesManagement.advancedSearch.chassisNumberPlaceholder' | t" [ngModel]="advancedChassisNumber()" (ngModelChange)="advancedChassisNumber.set($event)" name="advancedChassisNumber" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <app-input
-                                containerClass="mb-0"
-                                [label]="'vehiclesManagement.advancedSearch.serialNumber' | t"
-                                [placeholder]="'vehiclesManagement.advancedSearch.serialNumberPlaceholder' | t"
-                                [ngModel]="advancedSerialNumber()"
-                                (ngModelChange)="advancedSerialNumber.set($event)"
-                                name="advancedSerialNumber"
-                            />
+                            <app-input containerClass="mb-0" [label]="'vehiclesManagement.advancedSearch.serialNumber' | t" [placeholder]="'vehiclesManagement.advancedSearch.serialNumberPlaceholder' | t" [ngModel]="advancedSerialNumber()" (ngModelChange)="advancedSerialNumber.set($event)" name="advancedSerialNumber" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.yearOfManufacture' | t }}</label>
-                            <app-dropdown
-                                [options]="yearOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.yearOfManufacture' | t"
-                                [value]="advancedYear()"
-                                (valueChange)="advancedYear.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="yearOptions" [placeholder]="'vehiclesManagement.advancedSearch.yearOfManufacture' | t" [value]="advancedYear()" (valueChange)="advancedYear.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.licensePlate' | t }}</label>
@@ -102,104 +42,42 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.registrationStatus' | t }}</label>
-                            <app-dropdown
-                                [options]="registrationStatusOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.registrationStatusPlaceholder' | t"
-                                [value]="advancedRegistrationStatus()"
-                                (valueChange)="advancedRegistrationStatus.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="registrationStatusOptions" [placeholder]="'vehiclesManagement.advancedSearch.registrationStatusPlaceholder' | t" [value]="advancedRegistrationStatus()" (valueChange)="advancedRegistrationStatus.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.city' | t }}</label>
-                            <app-dropdown
-                                [options]="cityOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.cityPlaceholder' | t"
-                                [value]="advancedCity()"
-                                (valueChange)="advancedCity.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="cityOptions" [placeholder]="'vehiclesManagement.advancedSearch.cityPlaceholder' | t" [value]="advancedCity()" (valueChange)="advancedCity.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.instantSale' | t }}</label>
-                            <app-dropdown
-                                [options]="yesNoOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.instantSalePlaceholder' | t"
-                                [value]="advancedInstantSale()"
-                                (valueChange)="advancedInstantSale.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="yesNoOptions" [placeholder]="'vehiclesManagement.advancedSearch.instantSalePlaceholder' | t" [value]="advancedInstantSale()" (valueChange)="advancedInstantSale.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.saleRisk' | t }}</label>
-                            <app-dropdown
-                                [options]="yesNoOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.saleRiskPlaceholder' | t"
-                                [value]="advancedSaleRisk()"
-                                (valueChange)="advancedSaleRisk.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="yesNoOptions" [placeholder]="'vehiclesManagement.advancedSearch.saleRiskPlaceholder' | t" [value]="advancedSaleRisk()" (valueChange)="advancedSaleRisk.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.securityRequired' | t }}</label>
-                            <app-dropdown
-                                [options]="yesNoOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.securityRequiredPlaceholder' | t"
-                                [value]="advancedSecurityRequired()"
-                                (valueChange)="advancedSecurityRequired.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="yesNoOptions" [placeholder]="'vehiclesManagement.advancedSearch.securityRequiredPlaceholder' | t" [value]="advancedSecurityRequired()" (valueChange)="advancedSecurityRequired.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.keyAvailability' | t }}</label>
-                            <app-dropdown
-                                [options]="yesNoOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.keyAvailabilityPlaceholder' | t"
-                                [value]="advancedKeyAvailability()"
-                                (valueChange)="advancedKeyAvailability.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="yesNoOptions" [placeholder]="'vehiclesManagement.advancedSearch.keyAvailabilityPlaceholder' | t" [value]="advancedKeyAvailability()" (valueChange)="advancedKeyAvailability.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label small mb-1 d-block">{{ 'vehiclesManagement.advancedSearch.executedService' | t }}</label>
-                            <app-dropdown
-                                [options]="executedServiceOptions"
-                                [placeholder]="'vehiclesManagement.advancedSearch.executedServicePlaceholder' | t"
-                                [value]="advancedExecutedService()"
-                                (valueChange)="advancedExecutedService.set($event)"
-                                [showClear]="true"
-                            />
+                            <app-dropdown [options]="executedServiceOptions" [placeholder]="'vehiclesManagement.advancedSearch.executedServicePlaceholder' | t" [value]="advancedExecutedService()" (valueChange)="advancedExecutedService.set($event)" [showClear]="true" />
                         </div>
                         <div class="col-12 pt-2 d-flex flex-wrap gap-2 justify-content-end">
-                            <app-button
-                                type="submit"
-                                variant="primary"
-                                size="md"
-                                [label]="'vehiclesManagement.advancedSearch.search' | t"
-                                extraClass="rounded-2"
-                            />
-                            <app-button
-                                type="button"
-                                variant="gray"
-                                size="md"
-                                [label]="'vehiclesManagement.advancedSearch.reset' | t"
-                                extraClass="rounded-2"
-                                (clicked)="onAdvancedSearchReset()"
-                            />
+                            <app-button type="submit" variant="primary" size="md" [label]="'vehiclesManagement.advancedSearch.search' | t" extraClass="rounded-2" />
+                            <app-button type="button" variant="gray" size="md" [label]="'vehiclesManagement.advancedSearch.reset' | t" extraClass="rounded-2" (clicked)="onAdvancedSearchReset()" />
                         </div>
                     </div>
                 </form>
             </div>
         </app-search-card>
-        <app-data-table
-            [value]="tableData"
-            [columns]="vehicleColumns"
-            [rows]="rowsPerPage"
-            [totalRecords]="tableData.length"
-            [rowsPerPageOptions]="rowsPerPageOptions"
-            [currentPageReportTemplate]="'vehiclesManagement.tableReportTemplate' | t"
-            [actionMenuItems]="vehicleActionMenuItems"
-            (rowAction)="onVehicleRowAction($event)"
-        />
+        <app-data-table [value]="tableData" [columns]="vehicleColumns" [rows]="rowsPerPage" [totalRecords]="tableData.length" [rowsPerPageOptions]="rowsPerPageOptions" [currentPageReportTemplate]="'vehiclesManagement.tableReportTemplate' | t" [actionMenuItems]="vehicleActionMenuItems" (rowAction)="onVehicleRowAction($event)" />
     </div>
 </div>
+
+<app-add-vehicle-dialog [(visible)]="addVehicleDialogVisible" />

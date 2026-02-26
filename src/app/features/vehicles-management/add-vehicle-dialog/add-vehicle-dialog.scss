@@ -1,0 +1,165 @@
+/* Prime dialog overrides */
+:host ::ng-deep .add-vehicle-dialog.p-dialog {
+    border: 0;
+    overflow: hidden;
+}
+
+:host ::ng-deep .add-vehicle-dialog {
+    overflow: hidden;
+
+    .p-dialog-header {
+        padding: 0.5rem;
+        border-bottom: none;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+
+        &-actions {
+            .p-button-text.p-button-secondary {
+                color: var(--p-primary-contrast-color);
+
+                &:hover {
+                    background: color-mix(in srgb, var(--p-primary-contrast-color) 5%, transparent);
+                }
+            }
+        }
+    }
+
+    .p-dialog-content {
+        padding: 0;
+
+        i {
+            font-size: var(--p-icon-size-lg);
+        }
+    }
+}
+
+/* Dialog layout */
+.add-vehicle-dialog {
+    &__hero {
+        background: var(--brand-gradient-primary);
+        position: relative;
+        padding: 2.5rem 0;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            background: color-mix(in srgb, var(--p-primary-contrast-color) 5%, transparent);
+        }
+
+        &::before {
+            width: 6rem;
+            height: 6rem;
+            top: 0;
+            right: 0;
+        }
+
+        &::after {
+            width: 4.5rem;
+            height: 4.5rem;
+            bottom: 0;
+            left: 0;
+        }
+
+        .add-vehicle-dialog__icon-box {
+            background: color-mix(in srgb, var(--p-primary-contrast-color) 10%, transparent);
+            color: var(--p-primary-contrast-color);
+        }
+
+        /* typography tweaks */
+        ::ng-deep .add-vehicle-dialog__title {
+            font-size: 32px !important;
+            font-weight: 500 !important;
+            color: var(--p-primary-contrast-color) !important;
+        }
+
+        ::ng-deep .add-vehicle-dialog__subtitle {
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            color: var(--p-primary-contrast-color) !important;
+            opacity: 0.8;
+        }
+    }
+
+    &__icon-box {
+        width: 4.5rem;
+        height: 4.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--bs-border-radius-lg);
+        background: var(--p-highlight-background);
+        color: var(--p-primary-color);
+        font-size: 1.5rem;
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: var(--p-content-background, var(--bs-body-bg));
+        border: 1px solid var(--p-content-border-color);
+        border-radius: var(--bs-border-radius-lg);
+        cursor: pointer;
+        color: var(--p-primary-contrast-color);
+        position: relative;
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+
+        &:hover {
+            border-color: var(--p-primary-color);
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            background: color-mix(in srgb, var(--p-primary-800) 8%, transparent);
+            width: 3.5rem;
+            height: 3.5rem;
+            top: 0;
+            right: 0;
+        }
+
+        &-icon {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            background: var(--p-primary-color);
+            color: var(--p-highlight-background);
+            z-index: 1;
+
+            i {
+                font-size: var(--p-icon-size-md);
+            }
+        }
+    }
+}
+
+/* option variants */
+.brand-gradient-secondary-color {
+    background: var(--brand-gradient-secondary);
+}
+
+.brand-gradient-third-color {
+    background: var(--brand-gradient-third);
+
+    .add-vehicle-dialog__option-icon {
+        background-color: var(--p-primary-brand-500);
+    }
+}
+
+/* cancel */
+:host ::ng-deep .add-vehicle-dialog__cancel {
+    background-color: transparent;
+    border: none;
+    color: var(--p-primary-color);
+    font-size: 1.5rem;
+}

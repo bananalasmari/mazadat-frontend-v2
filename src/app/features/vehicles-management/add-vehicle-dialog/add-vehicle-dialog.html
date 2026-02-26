@@ -1,0 +1,36 @@
+<p-dialog [visible]="visible()" (visibleChange)="visible.set($event)" [modal]="true" [closable]="true" [draggable]="false" styleClass="add-vehicle-dialog" [style]="{ width: 'min(100%, 720px)'}">
+    <div class="add-vehicle-dialog__hero text-center">
+        <div class="add-vehicle-dialog__icon-box mx-auto mb-3">
+            <i class="pi pi-plus" aria-hidden="true"></i>
+        </div>
+        <app-typography tag="h3" variant="body" weight="normal" align="center" [text]="'vehiclesManagement.addVehicleDialog.title' | t" extraClass="add-vehicle-dialog__title mb-2" />
+        <app-typography tag="p" variant="body" weight="normal" align="center" [text]="'vehiclesManagement.addVehicleDialog.subtitle' | t" extraClass="add-vehicle-dialog__subtitle mb-0" />
+    </div>
+
+    <div class="add-vehicle-dialog__options d-flex flex-wrap flex-column gap-4 p-1 py-4">
+        <div class="row">
+            <div class="col-6">
+                <button type="button" class="add-vehicle-dialog__option w-100 h-100 brand-gradient-secondary-color" (click)="selectSingle()">
+                    <div class="add-vehicle-dialog__option-icon mb-2">
+                        <i class="pi pi-car" aria-hidden="true"></i>
+                    </div>
+                    <app-typography tag="span" variant="body" weight="bold" [text]="'vehiclesManagement.addVehicleDialog.singleVehicle' | t" extraClass="d-block h4" />
+                    <app-typography tag="span" variant="small" [text]="'vehiclesManagement.addVehicleDialog.singleVehicleDesc' | t" extraClass="d-block" />
+                </button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="add-vehicle-dialog__option w-100 h-100 brand-gradient-third-color" (click)="selectBulk()">
+                    <div class="add-vehicle-dialog__option-icon mb-2">
+                        <i class="pi pi-upload" aria-hidden="true"></i>
+                    </div>
+                    <app-typography tag="span" variant="body" weight="bold" [text]="'vehiclesManagement.addVehicleDialog.multipleVehicles' | t" extraClass="d-block h4" />
+                    <app-typography tag="span" variant="small" [text]="'vehiclesManagement.addVehicleDialog.multipleVehiclesDesc' | t" extraClass="d-block" />
+                </button>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <app-button size="md" [label]="'vehiclesManagement.addVehicleDialog.cancel' | t" (clicked)="close()" extraClass="add-vehicle-dialog__cancel mt-3 fw-medium" />
+        </div>
+    </div>
+</p-dialog>

@@ -138,6 +138,15 @@
       "view": "View",
       "edit": "Edit",
       "delete": "Delete"
+    },
+    "addVehicleDialog": {
+      "title": "Add Vehicle",
+      "subtitle": "Choose how to add your vehicle",
+      "singleVehicle": "Single Vehicle",
+      "singleVehicleDesc": "Add a single vehicle manually",
+      "multipleVehicles": "Multiple Vehicles",
+      "multipleVehiclesDesc": "Add multiple vehicles at once",
+      "cancel": "Cancel"
     }
   },
   "dashboard": {

@@ -3,83 +3,90 @@
 $enable-negative-margins: true;
 
 // Brand Colors
-$primary:   #24205B;
-$secondary: #4B49AC;
-$third:     #6C63FF;
-$fourth:    #A3A1FB;
-$fifth:     #E0E0FF;
+$primary: #24205b;
+$secondary: #4b49ac;
+$third: #6c63ff;
+$fourth: #a3a1fb;
+$fifth: #e0e0ff;
 
 // Semantic Colors
 $success: #198754;
-$info:    #0dcaf0;
+$info: #0dcaf0;
 $warning: #ffc107;
-$danger:  #dc3545;
-$light:   #f8f9fa;
-$dark:    #212529;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
 
 // =======================
 // Gray Scale
 // =======================
-$gray-50:  #F9FAFB;
-$gray-100: #F3F4F6;
-$gray-200: #E5E7EB;
-$gray-300: #D1D5DB;
-$gray-400: #9CA3AF;
-$gray-500: #6B7280;
-$gray-600: #4B5563;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
 $gray-700: #374151;
-$gray-800: #1F2937;
+$gray-800: #1f2937;
 $gray-900: #111827;
-
 
 // =======================
 // Natural Colors
 // =======================
-$natural:   #1E2939;
-$natural-gray:  #717680;
-$natural-olive:  #6B705C;
-$natural-stone:  #B7B7A4;
+$natural: #1e2939;
+$natural-gray: #717680;
+$natural-olive: #6b705c;
+$natural-stone: #b7b7a4;
 
-@import "bootstrap/bootstrap";  // v5.3.0 // local version so you can control imported components - please remove any unused components u don't need. 
+@import 'bootstrap/bootstrap'; // v5.3.0 // local version so you can control imported components - please remove any unused components u don't need.
 
 // Single source of truth: :root. No !important.
 :root {
-      --bs-primary-text: #24205B;
-      --bs-font-sans-serif: 'Elm', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
-      --bs-body-font-family: var(--bs-font-sans-serif);
-      --bs-body-font-size: 1.2rem;
-      --bs-body-bg: #fff;
-      /* PrimeNG: force primary to brand #24205B (overrides Lara default) */
-      --p-primary-500: #24205B;
-      --p-primary-color: #24205B;
-      --p-primary-contrast-color: #fff;
-      /* Button tokens; .btn maps --bs-btn-* to these so :root always wins */
-      --app-btn-padding-y: 0.2rem;
-      --app-btn-padding-x: 0.2rem;
-      --app-btn-font-size: 1.2rem;
-      --p-tag-font-weight: 400 !important;
-      --bs-border-radius-lg: 0.75rem;
-}
+    --bs-primary-text: #24205b;
+    --bs-font-sans-serif:
+        'Elm', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        'Liberation Sans', sans-serif;
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1.2rem;
+    --bs-body-bg: #fff;
+    /* PrimeNG: force primary to brand #24205B (overrides Lara default) */
+    --p-primary-500: #24205b;
+    --p-primary-color: #24205b;
+    --p-primary-contrast-color: #fff;
+    /* Button tokens; .btn maps --bs-btn-* to these so :root always wins */
+    --app-btn-padding-y: 0.2rem;
+    --app-btn-padding-x: 0.2rem;
+    --app-btn-font-size: 1.2rem;
+    --p-tag-font-weight: 400 !important;
+    --bs-border-radius-lg: 0.75rem;
 
+    /* Added by Osama */
+    --brand-gradient-primary: linear-gradient(135deg, #332ba6 0%, #353079 100%);
+    --brand-gradient-secondary: linear-gradient(315.52deg,
+            #433d8f 6.89%,
+            rgba(83, 73, 220, 0.28) 100%);
+    --brand-gradient-third: linear-gradient(315.71deg, #4d5bcc 0%, rgba(73, 61, 182, 0.69) 76.81%);
+
+    --p-primary-brand-500: #3e2faf;
+    --p-icon-size-md: 1.5rem;
+    --p-icon-size-lg: 2rem;
+}
 
 // App background can be a gradient (this won't work through `--bs-body-bg` because Bootstrap uses it in `background-color`).
 body {
-      background: linear-gradient(135deg, #fff 1.21%, #f9fafb 50.08%, #eae8f9 98.95%), #fff;
-      background-attachment: fixed;
+    background: linear-gradient(135deg, #fff 1.21%, #f9fafb 50.08%, #eae8f9 98.95%), #fff;
+    background-attachment: fixed;
 }
 
 @import 'sub/rtl'; // to enable two directions support - remove this file if u use english only
 
-@import 'sub/_reset'; // reset css with some useful extra style 
+@import 'sub/_reset'; // reset css with some useful extra style
 
 @import 'sub/_animation'; // basic animation style
- 
+
 @import 'sub/_custom'; // add your custom style here
 
-@import 'sub/_media-queries'; // empty media queries 
+@import 'sub/_media-queries'; // empty media queries
 
-@import 'sub/primeng'; // empty media queries 
-
- 
-
- 
+@import 'sub/primeng'; // empty media queries

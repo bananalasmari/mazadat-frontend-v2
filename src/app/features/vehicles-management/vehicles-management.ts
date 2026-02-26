@@ -16,6 +16,7 @@ import { InputComponent } from '../../shared/ui/atoms/input/input.component';
 import { DataTableComponent } from '../../shared/ui/data-table/data-table.component';
 import type { DataTableColumn } from '../../shared/ui/data-table/data-table-column.interface';
 import { SearchCardComponent, type SearchCardViewMode } from '../../shared/ui/search-card/search-card.component';
+import { AddVehicleDialog } from './add-vehicle-dialog/add-vehicle-dialog';
 
 export interface VehicleRegistrationRow extends Record<string, unknown> {
   registrationNumber: string;
@@ -68,6 +69,7 @@ function yearOptions(start: number, end: number): DropdownOption[] {
     DropdownComponent,
     DataTableComponent,
     SearchCardComponent,
+    AddVehicleDialog,
   ],
   templateUrl: './vehicles-management.html',
 })
@@ -155,8 +157,8 @@ export class VehiclesManagement {
   readonly rowsPerPage = DEFAULT_ROWS_PER_PAGE;
   readonly rowsPerPageOptions = DEFAULT_ROWS_PER_PAGE_OPTIONS;
   readonly viewMode = signal<SearchCardViewMode>('list');
-  /** Search query from search card – filters the table when bound with [query] and (queryChange). */
   readonly filterQuery = signal('');
+  readonly addVehicleDialogVisible = signal(false);
 
   get vehicleColumns(): DataTableColumn<VehicleRegistrationRow>[] {
     const t = (key: string) => this.i18n.t(key);
@@ -214,7 +216,7 @@ export class VehiclesManagement {
   }
 
   onAddVehicle(): void {
-    // TODO: navigate to add vehicle flow
+    this.addVehicleDialogVisible.set(true);
   }
 
   onInstantSale(): void {

@@ -1,234 +1,257 @@
 {
-  "common": {
-    "loading": "جاري التحميل...",
-    "home": "الصفحة الرئيسية",
-    "close": "إغلاق",
-    "noData": "لا توجد بيانات",
-    "actions": "الإجراءات"
-  },
-  "auth": {
-    "welcome": "مرحباً،",
-    "login": "تسجيل الدخول",
-    "logout": "تسجيل الخروج",
-    "logoutConfirmTitle": "تسجيل الخروج؟",
-    "logoutConfirmMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
-    "confirm": "نعم",
-    "cancel": "إلغاء"
-  },
-  "login": {
-    "title": "مرحباً بك في مزادات",
-    "subtitle": "سجّل الدخول للمتابعة إلى حسابك",
-    "businessAccount": "حساب أعمال",
-    "personalAccount": "حساب شخصي",
-    "usernameLabel": "البريد الإلكتروني / رقم الهوية / الإقامة",
-    "usernamePlaceholder": "البريد الإلكتروني أو رقم الهوية أو الإقامة",
-    "emailOrIdLabel": "البريد الإلكتروني أو رقم الهوية",
-    "emailOrIdPlaceholder": "البريد الإلكتروني أو رقم الهوية/الإقامة (9 أرقام)",
-    "passwordLabel": "كلمة المرور",
-    "passwordPlaceholder": "أدخل كلمة المرور",
-    "usernameRequired": "البريد الإلكتروني أو رقم الهوية أو الإقامة مطلوب",
-    "usernameFormatInvalid": "أدخل بريداً إلكترونياً صالحاً أو رقم هوية/إقامة مكوناً من 9 أرقام.",
-    "passwordRequired": "كلمة المرور مطلوبة",
-    "showPassword": "إظهار كلمة المرور",
-    "hidePassword": "إخفاء كلمة المرور",
-    "rememberMe": "تذكرني",
-    "forgotPassword": "نسيت كلمة المرور؟",
-    "submit": "تسجيل الدخول",
-    "loading": "جاري تسجيل الدخول...",
-    "helpText": "تحتاج مساعدة؟ تواصل مع الدعم.",
-    "otpTitle": "رمز التحقق",
-    "otpSubtitle": "أدخل رمز التحقق المكون من 6 أرقام للمتابعة",
-    "otpSubtitle4": "أدخل الرمز المكون من 4 أرقام للمتابعة",
-    "otpLabel": "رمز OTP",
-    "otpPlaceholder": "------",
-    "verify": "تحقق",
-    "verifying": "جاري التحقق...",
-    "back": "العودة لتسجيل الدخول",
-    "heroTitle": "انضم إلى منصة",
-    "carsmzd":"مزادات السيارات المميزة",
-    "heroSubtitle": "اكتشف أروع السيارات الفاخرة والكلاسيكية في مزادات حصرية. زايد بذكاء واحصل على سيارة أحلامك.",
-    "benefit1Title": "مزادات موثوقة وآمنة",
-    "benefit1Body": "جميع المركبات معتمدة ومفحوصة من قبل خبراء محترفين",
-    "benefit2Title": "مزادات حصرية",
-    "benefit2Body": "احصل على فرص حصرية لشراء أندر المركبات الفاخرة",
-    "benefit3Title": "تجربة مزايدة مميزة",
-    "benefit3Body": "واجهة بديهية ونظام مزايدة متقدم للحصول على التجربة المثالية"
-  },
-  "header": {
-    "search": "بحث",
-    "searchPlaceholder": "بحث",
-    "notifications": "اشعارات",
-    "notificationsEmpty": "لا توجد إشعارات",
-    "profile": "الملف الشخصي",
-    "settings": "الإعدادات",
-    "logout": "تسجيل الخروج",
-    "language": "تغيير اللغة",
-    "openMenu": "فتح القائمة"
-  },
-  "nav": {
-    "routingDemo": "عرض التوجيه"
-  },
-  "sideMenu": {
-    "sectionTitle": "وحدة الإدارة",
-    "dashboard": { "label": "لوحة التحكم", "description": "راقب أداء مزاداتك وأدر أعمالك" },
-    "vehicles": { "label": "مركباتي", "description": "اعرض وأدر مخزون مركباتك" },
-    "auctions": { "label": "مزادات مركباتي", "description": "تصفح وإدارة مزاداتك" },
-    "reports": { "label": "التقارير", "description": "تصدير تقاريرك" },
-    "invoices": { "label": "الفواتير والإيصالات", "description": "إدارة الفواتير والمدفوعات" }
-  },
-  "vehiclesManagement": {
-    "searchCard": {
-      "title": "جميع المركبات",
-      "count": "{{count}} مركبة متاحة",
-      "searchPlaceholder": "ابحث عن مركبة بالاسم أو الرقم...",
-      "filterRegistrationStatus": "الحالات التسجيل",
-      "filterCustomizeColumns": "تخصيص الأعمدة",
-      "filterAdvancedSearch": "بحث متقدم",
-      "exportReport": "تصدير تقرير"
+    "common": {
+        "loading": "جاري التحميل...",
+        "home": "الصفحة الرئيسية",
+        "close": "إغلاق",
+        "noData": "لا توجد بيانات",
+        "actions": "الإجراءات"
     },
-    "advancedSearch": {
-      "registrationNumber": "رقم التسجيل",
-      "registrationNumberPlaceholder": "ادخل رقم التسجيل للمركبة",
-      "chassisNumber": "رقم الهيكل",
-      "chassisNumberPlaceholder": "ادخل رقم الهيكل للمركبة",
-      "serialNumber": "الرقم التسلسلي",
-      "serialNumberPlaceholder": "ادخل الرقم التسلسلي للمركبة",
-      "yearOfManufacture": "سنة الصنع",
-      "licensePlate": "اللوحة",
-      "registrationStatus": "حالة التسجيل",
-      "registrationStatusPlaceholder": "اختر حالة التسجيل للمركبة في منصة مزادات",
-      "city": "المدينة",
-      "cityPlaceholder": "اختر المدينة",
-      "instantSale": "البيع الفوري",
-      "instantSalePlaceholder": "هل خدمة البيع الفوري مضافة للمركبة؟",
-      "saleRisk": "خطر البيع",
-      "saleRiskPlaceholder": "هل هناك خطر بيع على المركبة ؟",
-      "securityRequired": "مطلوبة أمنياً",
-      "securityRequiredPlaceholder": "هل المركبة مطلوبة أمنيا؟",
-      "keyAvailability": "توفر المفتاح",
-      "keyAvailabilityPlaceholder": "هل المفتاح متوفر للمركبة ؟",
-      "executedService": "الخدمة المنفذة",
-      "executedServicePlaceholder": "اختر الخدمة المنفذة على المركبة",
-      "search": "البحث",
-      "reset": "إعادة تعيين",
-      "yes": "نعم",
-      "no": "لا"
+    "auth": {
+        "welcome": "مرحباً،",
+        "login": "تسجيل الدخول",
+        "logout": "تسجيل الخروج",
+        "logoutConfirmTitle": "تسجيل الخروج؟",
+        "logoutConfirmMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+        "confirm": "نعم",
+        "cancel": "إلغاء"
     },
-    "addVehicle": {
-      "title": "إضافة مركبة",
-      "description": "قم بإدراج مركبتك على المنصة لنتمكن من عرضها في المزاد.",
-      "buttonLabel": "إضافة المركبة"
+    "login": {
+        "title": "مرحباً بك في مزادات",
+        "subtitle": "سجّل الدخول للمتابعة إلى حسابك",
+        "businessAccount": "حساب أعمال",
+        "personalAccount": "حساب شخصي",
+        "usernameLabel": "البريد الإلكتروني / رقم الهوية / الإقامة",
+        "usernamePlaceholder": "البريد الإلكتروني أو رقم الهوية أو الإقامة",
+        "emailOrIdLabel": "البريد الإلكتروني أو رقم الهوية",
+        "emailOrIdPlaceholder": "البريد الإلكتروني أو رقم الهوية/الإقامة (9 أرقام)",
+        "passwordLabel": "كلمة المرور",
+        "passwordPlaceholder": "أدخل كلمة المرور",
+        "usernameRequired": "البريد الإلكتروني أو رقم الهوية أو الإقامة مطلوب",
+        "usernameFormatInvalid": "أدخل بريداً إلكترونياً صالحاً أو رقم هوية/إقامة مكوناً من 9 أرقام.",
+        "passwordRequired": "كلمة المرور مطلوبة",
+        "showPassword": "إظهار كلمة المرور",
+        "hidePassword": "إخفاء كلمة المرور",
+        "rememberMe": "تذكرني",
+        "forgotPassword": "نسيت كلمة المرور؟",
+        "submit": "تسجيل الدخول",
+        "loading": "جاري تسجيل الدخول...",
+        "helpText": "تحتاج مساعدة؟ تواصل مع الدعم.",
+        "otpTitle": "رمز التحقق",
+        "otpSubtitle": "أدخل رمز التحقق المكون من 6 أرقام للمتابعة",
+        "otpSubtitle4": "أدخل الرمز المكون من 4 أرقام للمتابعة",
+        "otpLabel": "رمز OTP",
+        "otpPlaceholder": "------",
+        "verify": "تحقق",
+        "verifying": "جاري التحقق...",
+        "back": "العودة لتسجيل الدخول",
+        "heroTitle": "انضم إلى منصة",
+        "carsmzd": "مزادات السيارات المميزة",
+        "heroSubtitle": "اكتشف أروع السيارات الفاخرة والكلاسيكية في مزادات حصرية. زايد بذكاء واحصل على سيارة أحلامك.",
+        "benefit1Title": "مزادات موثوقة وآمنة",
+        "benefit1Body": "جميع المركبات معتمدة ومفحوصة من قبل خبراء محترفين",
+        "benefit2Title": "مزادات حصرية",
+        "benefit2Body": "احصل على فرص حصرية لشراء أندر المركبات الفاخرة",
+        "benefit3Title": "تجربة مزايدة مميزة",
+        "benefit3Body": "واجهة بديهية ونظام مزايدة متقدم للحصول على التجربة المثالية"
     },
-    "instantSale": {
-      "title": "خدمة البيع الفوري",
-      "description": "يمكنك إضافة خيار البيع المباشر وقت المزاد لمركباتك.",
-      "buttonLabel": "بدء الخدمة"
+    "header": {
+        "search": "بحث",
+        "searchPlaceholder": "بحث",
+        "notifications": "اشعارات",
+        "notificationsEmpty": "لا توجد إشعارات",
+        "profile": "الملف الشخصي",
+        "settings": "الإعدادات",
+        "logout": "تسجيل الخروج",
+        "language": "تغيير اللغة",
+        "openMenu": "فتح القائمة"
     },
-    "tableReportTemplate": "عرض {rows} نتائج من أصل {totalRecords}",
-    "columns": {
-      "registrationNumber": "رقم التسجيل",
-      "vehicle": "المركبة",
-      "plate": "اللوحة",
-      "platformStatus": "حالة التسجيل في المنصة",
-      "addDate": "تاريخ الإضافة",
-      "city": "المدينة",
-      "actions": "الإجراءات"
+    "nav": {
+        "routingDemo": "عرض التوجيه"
     },
-    "actions": {
-      "view": "عرض",
-      "edit": "تعديل",
-      "delete": "حذف"
+    "sideMenu": {
+        "sectionTitle": "وحدة الإدارة",
+        "dashboard": {
+            "label": "لوحة التحكم",
+            "description": "راقب أداء مزاداتك وأدر أعمالك"
+        },
+        "vehicles": {
+            "label": "مركباتي",
+            "description": "اعرض وأدر مخزون مركباتك"
+        },
+        "auctions": {
+            "label": "مزادات مركباتي",
+            "description": "تصفح وإدارة مزاداتك"
+        },
+        "reports": {
+            "label": "التقارير",
+            "description": "تصدير تقاريرك"
+        },
+        "invoices": {
+            "label": "الفواتير والإيصالات",
+            "description": "إدارة الفواتير والمدفوعات"
+        }
+    },
+    "vehiclesManagement": {
+        "searchCard": {
+            "title": "جميع المركبات",
+            "count": "{{count}} مركبة متاحة",
+            "searchPlaceholder": "ابحث عن مركبة بالاسم أو الرقم...",
+            "filterRegistrationStatus": "الحالات التسجيل",
+            "filterCustomizeColumns": "تخصيص الأعمدة",
+            "filterAdvancedSearch": "بحث متقدم",
+            "exportReport": "تصدير تقرير"
+        },
+        "advancedSearch": {
+            "registrationNumber": "رقم التسجيل",
+            "registrationNumberPlaceholder": "ادخل رقم التسجيل للمركبة",
+            "chassisNumber": "رقم الهيكل",
+            "chassisNumberPlaceholder": "ادخل رقم الهيكل للمركبة",
+            "serialNumber": "الرقم التسلسلي",
+            "serialNumberPlaceholder": "ادخل الرقم التسلسلي للمركبة",
+            "yearOfManufacture": "سنة الصنع",
+            "licensePlate": "اللوحة",
+            "registrationStatus": "حالة التسجيل",
+            "registrationStatusPlaceholder": "اختر حالة التسجيل للمركبة في منصة مزادات",
+            "city": "المدينة",
+            "cityPlaceholder": "اختر المدينة",
+            "instantSale": "البيع الفوري",
+            "instantSalePlaceholder": "هل خدمة البيع الفوري مضافة للمركبة؟",
+            "saleRisk": "خطر البيع",
+            "saleRiskPlaceholder": "هل هناك خطر بيع على المركبة ؟",
+            "securityRequired": "مطلوبة أمنياً",
+            "securityRequiredPlaceholder": "هل المركبة مطلوبة أمنيا؟",
+            "keyAvailability": "توفر المفتاح",
+            "keyAvailabilityPlaceholder": "هل المفتاح متوفر للمركبة ؟",
+            "executedService": "الخدمة المنفذة",
+            "executedServicePlaceholder": "اختر الخدمة المنفذة على المركبة",
+            "search": "البحث",
+            "reset": "إعادة تعيين",
+            "yes": "نعم",
+            "no": "لا"
+        },
+        "addVehicle": {
+            "title": "إضافة مركبة جديدة",
+            "description": "قم بإدراج مركبتك على المنصة لنتمكن من عرضها في المزاد.",
+            "buttonLabel": "إضافة المركبة"
+        },
+        "instantSale": {
+            "title": "خدمة البيع الفوري",
+            "description": "يمكنك إضافة خيار البيع المباشر وقت المزاد لمركباتك.",
+            "buttonLabel": "بدء الخدمة"
+        },
+        "tableReportTemplate": "عرض {rows} نتائج من أصل {totalRecords}",
+        "columns": {
+            "registrationNumber": "رقم التسجيل",
+            "vehicle": "المركبة",
+            "plate": "اللوحة",
+            "platformStatus": "حالة التسجيل في المنصة",
+            "addDate": "تاريخ الإضافة",
+            "city": "المدينة",
+            "actions": "الإجراءات"
+        },
+        "actions": {
+            "view": "عرض",
+            "edit": "تعديل",
+            "delete": "حذف"
+        },
+        "addVehicleDialog": {
+            "title": "إضافة مركبة جديدة",
+            "subtitle": "اختر عدد المركبات التي تريد إضافتها للمزاد",
+            "singleVehicle": "مركبة واحدة",
+            "singleVehicleDesc": "لإدراج وعرض مركبة واحدة فقط للبيع.",
+            "multipleVehicles": "عدة مركبات",
+            "multipleVehiclesDesc": "إضافة عدة مركبات دفعة واحدة بطريقة سريعة وسهلة",
+            "cancel": "إلغاء"
+        }
+    },
+    "dashboard": {
+        "dateRangeLast7": "آخر 7 أيام",
+        "dateRangeLast30": "آخر 30 يوماً",
+        "dateRangeLast90": "آخر 90 يوماً",
+        "dateRangePlaceholder": "الفترة",
+        "customizePage": "تخصيص الصفحة",
+        "export": "تصدير",
+        "stats": {
+            "bidders": "المزايدين",
+            "biddersTrend": "المسجلين",
+            "averageSalePrice": "متوسط سعر البيع",
+            "averageSalePriceTrend": "هذا الشهر",
+            "activeAuctions": "المزادات النشطة",
+            "activeAuctionsTrend": "نشط",
+            "totalRevenue": "إجمالي الإيرادات",
+            "totalRevenueTrend": "آخر 30 يوماً"
+        },
+        "charts": {
+            "mostSoldCarsTitle": "أكثر السيارات مبيعا",
+            "mostSoldCarsSubtitle": "توزيع المزادات حسب ماركة السيارة",
+            "salesPerformanceTitle": "أداء المبيعات",
+            "salesPerformanceSubtitle": "الإيرادات الشهرية",
+            "brandAudi": "أودي",
+            "brandPorsche": "بورشه",
+            "brandBmw": "بي إم دبليو",
+            "brandLexus": "لكزس",
+            "brandMercedes": "مرسيدس بنز",
+            "brandOther": "أخرى",
+            "monthJan": "يناير",
+            "monthFeb": "فبراير",
+            "monthMar": "مارس",
+            "monthApr": "أبريل",
+            "monthMay": "مايو",
+            "monthJun": "يونيو"
+        },
+        "quickActions": {
+            "title": "الإجراءات السريعة",
+            "subtitle": "المهام والإجراءات التي تحتاج انتباهك الفوري",
+            "empty": "لا توجد إجراءات سريعة حالياً.",
+            "salesAgreement": {
+                "title": "الموافقة على اتفاقية بيع",
+                "body": "يجب عليك الموافقة على سياسة البيع لتتمكن من البدء بإستخدام مزادات.",
+                "badge": "مهم",
+                "button": "مراجعة الاتفاقية"
+            },
+            "vehicleSale": {
+                "title": "الموافقة على بيع المركبة",
+                "vehicleName": "بورش 911 GT3",
+                "purchaseType": "شراء فوري",
+                "price": "95,000",
+                "reject": "رفض",
+                "accept": "قبول",
+                "rejectConfirmTitle": "رفض البيع؟",
+                "rejectConfirmMessage": "هل أنت متأكد أنك تريد رفض بيع هذه المركبة؟",
+                "acceptConfirmTitle": "قبول البيع؟",
+                "acceptConfirmMessage": "هل أنت متأكد أنك تريد قبول بيع هذه المركبة؟",
+                "acceptedLabel": "مقبول",
+                "rejectedLabel": "مرفوض"
+            },
+            "vehicleDues": {
+                "title": "سداد مستحقات مركب",
+                "body": "لكزس 600 LX في انتظار عملية التسجيل",
+                "button": "متابعة التسجيل"
+            }
+        },
+        "activeListings": {
+            "title": "القوائم النشطة",
+            "subtitle": "السيارات المتاحة",
+            "viewAll": "عرض الكل",
+            "download": "تحميل",
+            "filter": "تصفية"
+        },
+        "latestAuctions": {
+            "title": "آخر المزادات",
+            "subtitle": "أحدث 5 مزادات",
+            "viewAll": "عرض الكل",
+            "pending": "قيد الانتظار",
+            "download": "تحميل",
+            "filter": "تصفية"
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} جميع الحقوق محفوظة. ELM"
+    },
+    "home": {
+        "hello": "مرحباً",
+        "congrats": "تهانينا! التطبيق يعمل الآن.",
+        "checkingAuth": "جاري التحقق من تسجيل الدخول...",
+        "loginToMazadat": "سجّل الدخول إلى مزادات"
     }
-  },
-  "dashboard": {
-    "dateRangeLast7": "آخر 7 أيام",
-    "dateRangeLast30": "آخر 30 يوماً",
-    "dateRangeLast90": "آخر 90 يوماً",
-    "dateRangePlaceholder": "الفترة",
-    "customizePage": "تخصيص الصفحة",
-    "export": "تصدير",
-    "stats": {
-      "bidders": "المزايدين",
-      "biddersTrend": "المسجلين",
-      "averageSalePrice": "متوسط سعر البيع",
-      "averageSalePriceTrend": "هذا الشهر",
-      "activeAuctions": "المزادات النشطة",
-      "activeAuctionsTrend": "نشط",
-      "totalRevenue": "إجمالي الإيرادات",
-      "totalRevenueTrend": "آخر 30 يوماً"
-    },
-    "charts": {
-      "mostSoldCarsTitle": "أكثر السيارات مبيعا",
-      "mostSoldCarsSubtitle": "توزيع المزادات حسب ماركة السيارة",
-      "salesPerformanceTitle": "أداء المبيعات",
-      "salesPerformanceSubtitle": "الإيرادات الشهرية",
-      "brandAudi": "أودي",
-      "brandPorsche": "بورشه",
-      "brandBmw": "بي إم دبليو",
-      "brandLexus": "لكزس",
-      "brandMercedes": "مرسيدس بنز",
-      "brandOther": "أخرى",
-      "monthJan": "يناير",
-      "monthFeb": "فبراير",
-      "monthMar": "مارس",
-      "monthApr": "أبريل",
-      "monthMay": "مايو",
-      "monthJun": "يونيو"
-    },
-    "quickActions": {
-      "title": "الإجراءات السريعة",
-      "subtitle": "المهام والإجراءات التي تحتاج انتباهك الفوري",
-      "empty": "لا توجد إجراءات سريعة حالياً.",
-      "salesAgreement": {
-        "title": "الموافقة على اتفاقية بيع",
-        "body": "يجب عليك الموافقة على سياسة البيع لتتمكن من البدء بإستخدام مزادات.",
-        "badge": "مهم",
-        "button": "مراجعة الاتفاقية"
-      },
-      "vehicleSale": {
-        "title": "الموافقة على بيع المركبة",
-        "vehicleName": "بورش 911 GT3",
-        "purchaseType": "شراء فوري",
-        "price": "95,000",
-        "reject": "رفض",
-        "accept": "قبول",
-        "rejectConfirmTitle": "رفض البيع؟",
-        "rejectConfirmMessage": "هل أنت متأكد أنك تريد رفض بيع هذه المركبة؟",
-        "acceptConfirmTitle": "قبول البيع؟",
-        "acceptConfirmMessage": "هل أنت متأكد أنك تريد قبول بيع هذه المركبة؟",
-        "acceptedLabel": "مقبول",
-        "rejectedLabel": "مرفوض"
-      },
-      "vehicleDues": {
-        "title": "سداد مستحقات مركب",
-        "body": "لكزس 600 LX في انتظار عملية التسجيل",
-        "button": "متابعة التسجيل"
-      }
-    },
-    "activeListings": {
-      "title": "القوائم النشطة",
-      "subtitle": "السيارات المتاحة",
-      "viewAll": "عرض الكل",
-      "download": "تحميل",
-      "filter": "تصفية"
-    },
-    "latestAuctions": {
-      "title": "آخر المزادات",
-      "subtitle": "أحدث 5 مزادات",
-      "viewAll": "عرض الكل",
-      "pending": "قيد الانتظار",
-      "download": "تحميل",
-      "filter": "تصفية"
-    }
-  },
-  "footer": {
-    "copyright": "© {{year}} جميع الحقوق محفوظة. ELM"
-  },
-  "home": {
-    "hello": "مرحباً",
-    "congrats": "تهانينا! التطبيق يعمل الآن.",
-    "checkingAuth": "جاري التحقق من تسجيل الدخول...",
-    "loginToMazadat": "سجّل الدخول إلى مزادات"
-  }
 }
-
