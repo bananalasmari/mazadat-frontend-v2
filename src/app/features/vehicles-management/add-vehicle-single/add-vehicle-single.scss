@@ -1,0 +1,133 @@
+.app-breadcrumb,
+.add-vehicle-single__breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.125rem;
+
+    i {
+        font-size: 0.75rem;
+    }
+}
+
+.app-breadcrumb__link,
+.add-vehicle-single__breadcrumb-link {
+    font-weight: 500;
+    color: var(--p-primary-color);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.app-breadcrumb__separator,
+.add-vehicle-single__breadcrumb-separator {
+    color: var(--bs-secondary-color);
+}
+
+.app-breadcrumb__current,
+.add-vehicle-single__breadcrumb-current {
+    color: var(--bs-secondary-color);
+}
+
+.add-vehicle-stepper {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.add-vehicle-stepper__step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    border-radius: var(--bs-border-radius-lg);
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+
+    &--active {
+        background: var(--p-highlight-background);
+
+        .add-vehicle-stepper__icon {
+            background: var(--p-primary-color);
+            color: var(--p-primary-contrast-color);
+        }
+
+        .add-vehicle-stepper__label {
+            color: var(--p-primary-color);
+        }
+    }
+
+    &--completed {
+        .add-vehicle-stepper__icon {
+            background: var(--p-primary-color);
+            color: var(--p-primary-contrast-color);
+        }
+    }
+}
+
+.add-vehicle-stepper__icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--bs-border-radius-lg);
+    background: var(--p-content-border-color);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.add-vehicle-stepper__connector {
+    flex: 1;
+    height: 1px;
+    background: var(--p-content-border-color);
+    min-width: 1.5rem;
+}
+
+.add-vehicle-stepper__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.add-vehicle-stepper__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.add-vehicle-stepper__optional {
+    font-size: 0.75rem;
+    color: var(--bs-secondary-color);
+}
+
+:host ::ng-deep .add-vehicle-single__video-btn {
+    width: 2.625rem;
+    height: 2.625rem;
+    border-radius: 0.5rem;
+    border-color: var(--p-content-border-color);
+    background: var(--p-content-background);
+    color: var(--bs-secondary-color);
+    box-shadow: none;
+
+    i {
+        font-size: 1rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+        background: var(--p-content-background);
+        border-color: var(--p-content-border-color);
+        color: var(--bs-secondary-color);
+        box-shadow: none;
+        outline: 0;
+    }
+}

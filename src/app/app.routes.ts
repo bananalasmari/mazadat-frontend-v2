@@ -47,6 +47,13 @@ export const routes: Routes = [
           import('./features/dashboard/dashboard').then((m) => m.Dashboard),
       },
       {
+        path: 'vehicles/add/single',
+        loadComponent: () =>
+          import('./features/vehicles-management/add-vehicle-single/add-vehicle-single').then(
+            (m) => m.AddVehicleSingle,
+          ),
+      },
+      {
         path: 'vehicles',
         loadComponent: () =>
           import('./features/vehicles-management/vehicles-management').then((m) => m.VehiclesManagement),
