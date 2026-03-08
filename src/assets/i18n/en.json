@@ -184,7 +184,16 @@
       "instantApprovalPricePlaceholder": "Instant approval price",
       "instantApprovalPriceHelp": "A fixed price at which the vehicle can be sold immediately without waiting for the auction to end",
       "directSalePrice": "Direct Sale Price",
-      "directSalePricePlaceholder": "Enter direct sale price"
+      "directSalePricePlaceholder": "Enter direct sale price",
+      "additionalServicesTitle": "Additional Services",
+      "additionalServicesBanner": "Choose from our additional services for a better selling experience and stronger results.",
+      "serviceTransport": "Vehicle Transport",
+      "serviceTransportDesc": "Transport the vehicle from its current location to the auction grounds",
+      "serviceKeyCut": "Key Cutting",
+      "serviceKeyCutDesc": "Cut a new key for the vehicle if the key is unavailable",
+      "serviceEvaluation": "Vehicle Evaluation",
+      "serviceEvaluationDesc": "Evaluate and appraise the vehicle by an accredited evaluator from the Saudi Authority for Accredited Valuers.",
+      "servicesDisclaimer": "Note: Some services are paid and their prices are determined by the service provider"
     },
     "addVehicleDialog": {
       "title": "Add Vehicle",

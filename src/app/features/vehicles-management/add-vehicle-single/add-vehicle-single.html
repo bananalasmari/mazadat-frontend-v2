@@ -111,7 +111,7 @@
             }
             @case (1) {
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-header d-flex align-items-center">
                     <app-typography tag="h3" variant="h5" weight="bold" [text]="'vehiclesManagement.addSingle.priceSettingsTitle' | t" extraClass="mb-0" />
                     <span class="text-muted small">{{ 'vehiclesManagement.addSingle.optional' | t }}</span>
                 </div>
@@ -138,11 +138,66 @@
             }
             @case (2) {
             <div class="card">
-                <div class="card-header">
-                    <app-typography tag="h3" variant="h5" weight="bold" [text]="'vehiclesManagement.addSingle.step3' | t" extraClass="mb-0" />
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <app-typography tag="h3" variant="h5" weight="bold" [text]="'vehiclesManagement.addSingle.additionalServicesTitle' | t" extraClass="mb-0" />
+                    <span class="text-muted small">{{ 'vehiclesManagement.addSingle.optional' | t }}</span>
                 </div>
                 <div class="card-body p-3 p-md-4">
-                    <p class="text-muted">{{ 'vehiclesManagement.addSingle.step3Desc' | t }}</p>
+                    <div class="alert alert-info mb-4">
+                        {{ 'vehiclesManagement.addSingle.additionalServicesBanner' | t }}
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="service-card" [class.service-card--selected]="serviceKeyCut()">
+                                <input type="checkbox" class="form-check-input service-card__check" [checked]="serviceKeyCut()" (change)="serviceKeyCut.set(!serviceKeyCut())" />
+                                <div class="service-card__body">
+                                    <div class="service-card__icon">
+                                        <img src="assets/icons/key-icon.svg" alt="" />
+                                    </div>
+                                    <div class="service-card__text">
+                                        <span class="service-card__title">{{ 'vehiclesManagement.addSingle.serviceKeyCut' | t }}</span>
+                                        <span class="service-card__desc">{{ 'vehiclesManagement.addSingle.serviceKeyCutDesc' | t }}</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="service-card" [class.service-card--selected]="serviceTransport()">
+                                <input type="checkbox" class="form-check-input service-card__check" [checked]="serviceTransport()" (change)="serviceTransport.set(!serviceTransport())" />
+                                <div class="service-card__body">
+                                    <div class="service-card__icon">
+                                        <img src="assets/icons/truck-icon.svg" alt="" />
+                                    </div>
+                                    <div class="service-card__text">
+                                        <span class="service-card__title">{{ 'vehiclesManagement.addSingle.serviceTransport' | t }}</span>
+                                        <span class="service-card__desc">{{ 'vehiclesManagement.addSingle.serviceTransportDesc' | t }}</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-12">
+                            <label class="service-card" [class.service-card--selected]="serviceEvaluation()">
+                                <input type="checkbox" class="form-check-input service-card__check" [checked]="serviceEvaluation()" (change)="serviceEvaluation.set(!serviceEvaluation())" />
+                                <div class="service-card__body">
+                                    <div class="service-card__icon">
+                                        <img src="assets/icons/vehicle-report-icon.svg" alt="" />
+                                    </div>
+                                    <div class="service-card__text">
+                                        <span class="service-card__title">{{ 'vehiclesManagement.addSingle.serviceEvaluation' | t }}</span>
+                                        <span class="service-card__desc">{{ 'vehiclesManagement.addSingle.serviceEvaluationDesc' | t }}</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-text text-info">
+                        <i class="pi pi-info-circle me-1"></i>{{ 'vehiclesManagement.addSingle.servicesDisclaimer' | t }}
+                    </div>
                 </div>
             </div>
             }

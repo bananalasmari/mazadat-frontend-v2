@@ -190,7 +190,7 @@
             "cityDammam": "الدمام",
             "next": "التالي",
             "previous": "السابق",
-            "priceSettingsTitle": "إعدادات الأسعار (اختياري)",
+            "priceSettingsTitle": "إعدادات الأسعار",
             "priceSettingsBanner": "قم بضبط إعدادات الأسعار الآن: حدد سعر البداية وسعر البيع الفوري لتحقيق أقصى استفادة من مزاداتك.",
             "auctionStartPrice": "سعر بداية المزاد",
             "auctionStartPricePlaceholder": "ادخل سعر بداية المزاد",
@@ -199,7 +199,16 @@
             "instantApprovalPricePlaceholder": "سعر الموافقة الفورية",
             "instantApprovalPriceHelp": "سعر ثابتاً يمكن عنده بيع المركبة مباشرة دون انتظار انتهاء المزاد",
             "directSalePrice": "سعر البيع المباشر",
-            "directSalePricePlaceholder": "ادخل سعر البيع المباشر"
+            "directSalePricePlaceholder": "ادخل سعر البيع المباشر",
+            "additionalServicesTitle": "الخدمات الإضافية",
+            "additionalServicesBanner": "اختر من خدماتنا الإضافية لتحصل على تجربة بيع أفضل ونتائج أقوى.",
+            "serviceTransport": "نقل المركبة",
+            "serviceTransportDesc": "نقل المركبة من موقعها الحالي الى ارض المزاد",
+            "serviceKeyCut": "قص مفتاح",
+            "serviceKeyCutDesc": "قص مفتاح جديد للمركبة في حال عدم توفر المفتاح",
+            "serviceEvaluation": "تقييم المركبة",
+            "serviceEvaluationDesc": "تقييم و تثمين المركبة من احد المقيمين المعتمدين من الهيئة السعودية للمقيمين .",
+            "servicesDisclaimer": "تنويه : هناك خدمات مدفوعة ويحدد سعرها من قبل مزود الخدمة"
         },
         "addVehicleDialog": {
             "title": "إضافة مركبة جديدة",

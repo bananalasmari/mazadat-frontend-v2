@@ -42,6 +42,10 @@ export class AddVehicleSingle {
   readonly instantApprovalPrice = signal<string>('');
   readonly directSalePrice = signal<string>('');
 
+  readonly serviceTransport = signal(false);
+  readonly serviceKeyCut = signal(false);
+  readonly serviceEvaluation = signal(false);
+
   readonly isCurrentStepValid = computed(() => {
     switch (this.currentStep()) {
       case 0:
