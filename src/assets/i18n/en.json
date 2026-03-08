@@ -236,7 +236,14 @@
       "registered": "Registered",
       "working": "Working",
       "private": "Private",
-      "individual": "Individual"
+      "individual": "Individual",
+      "confirmDialogTitle": "Confirm Adding Vehicle",
+      "confirmDialogText": "By clicking \"Confirm\" you acknowledge and agree to the <a href='#'>Terms & Conditions</a> and <a href='#'>Sales Policy</a> of (Mazadat).",
+      "confirmDialogQuestion": "Would you like to proceed?",
+      "confirmDialogBtn": "Confirm Addition",
+      "successTitle": "Vehicle Added Successfully",
+      "successText": "The vehicle has been added to your vehicles list. The operations team will proceed with registering it on the platform, preparing it, and listing it in the auction.",
+      "successBtn": "OK"
     },
     "addVehicleDialog": {
       "title": "Add Vehicle",

@@ -449,9 +449,28 @@
                 @if (currentStep()
                 < steps.length - 1) { <app-button variant="primary" size="lg" [label]="'vehiclesManagement.addSingle.next' | t" icon="pi pi-chevron-left" iconPosition="end" extraClass="px-5" [disabled]="!isCurrentStepValid()" (clicked)="onNext()" />
                 } @else {
-                <app-button variant="primary" size="lg" [label]="'vehiclesManagement.addSingle.addVehicleBtn' | t" icon="pi pi-check" iconPosition="start" extraClass="px-5" />
+                <app-button variant="primary" size="lg" [label]="'vehiclesManagement.addSingle.addVehicleBtn' | t" icon="pi pi-check" iconPosition="start" extraClass="px-5" (clicked)="openConfirmDialog()" />
                 }
             </div>
         </div>
     </div>
 </div>
+
+<p-dialog [visible]="confirmDialogVisible()" (visibleChange)="confirmDialogVisible.set($event)" [modal]="true" [closable]="true" [draggable]="false" styleClass="confirm-add-dialog" [style]="{ width: 'min(100%, 520px)'}">
+    <div class="confirm-add-dialog__content text-center p-4">
+        <img src="assets/icons/ask-icon.svg" alt="" aria-hidden="true" class="confirm-add-dialog__icon mb-4" />
+        <app-typography tag="h3" variant="h3" weight="bold" align="center" [text]="'vehiclesManagement.addSingle.confirmDialogTitle' | t" extraClass="mb-3" />
+        <p class="confirm-add-dialog__text mb-2" [innerHTML]="'vehiclesManagement.addSingle.confirmDialogText' | t"></p>
+        <p class="confirm-add-dialog__question mb-4">{{ 'vehiclesManagement.addSingle.confirmDialogQuestion' | t }}</p>
+        <app-button variant="primary" size="lg" [label]="'vehiclesManagement.addSingle.confirmDialogBtn' | t" icon="pi pi-check" iconPosition="start" extraClass="w-100" (clicked)="confirmAddVehicle()" />
+    </div>
+</p-dialog>
+
+<p-dialog [visible]="successDialogVisible()" (visibleChange)="successDialogVisible.set($event)" [modal]="true" [closable]="false" [draggable]="false" styleClass="success-add-dialog" [style]="{ width: 'min(100%, 520px)'}">
+    <div class="success-add-dialog__content text-center p-4">
+        <img src="assets/icons/vehicle-success.svg" alt="" aria-hidden="true" class="success-add-dialog__image mb-3" />
+        <app-typography tag="h3" variant="h3" weight="bold" align="center" [text]="'vehiclesManagement.addSingle.successTitle' | t" extraClass="mb-3" />
+        <p class="success-add-dialog__text mb-4">{{ 'vehiclesManagement.addSingle.successText' | t }}</p>
+        <app-button variant="outline" size="lg" [label]="'vehiclesManagement.addSingle.successBtn' | t" extraClass="w-100" (clicked)="closeSuccessDialog()" />
+    </div>
+</p-dialog>

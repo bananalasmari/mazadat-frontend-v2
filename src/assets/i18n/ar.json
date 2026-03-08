@@ -251,7 +251,14 @@
             "registered": "مسجلة",
             "working": "تعمل",
             "private": "خصوصي",
-            "individual": "فردي"
+            "individual": "فردي",
+            "confirmDialogTitle": "تأكيد إضافة مركبة",
+            "confirmDialogText": "بالضغط على \"تأكيد\" فإنك تقرّ وتوافق على <a href='#'>الشروط والأحكام</a> و <a href='#'>سياسة البيع</a> الخاصة بـ(مزادات).",
+            "confirmDialogQuestion": "هل ترغب بالمتابعة؟",
+            "confirmDialogBtn": "تأكيد الإضافة",
+            "successTitle": "تم إضافة المركبة بنجاح",
+            "successText": "تمت إضافة المركبة إلى قائمة مركباتك، وسيباشر الفريق التشغيلي إجراءات تسجيلها على المنصة و تجهيزها و عرضها في المزاد",
+            "successBtn": "حسنًا"
         },
         "addVehicleDialog": {
             "title": "إضافة مركبة جديدة",

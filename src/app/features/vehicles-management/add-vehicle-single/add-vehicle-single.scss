@@ -310,3 +310,78 @@
         outline: 0;
     }
 }
+
+:host ::ng-deep .confirm-add-dialog {
+    overflow: hidden;
+
+    .p-dialog-header {
+        padding: 0.5rem;
+        border-bottom: none;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+
+        &-actions {
+            .p-button-text.p-button-secondary {
+                color: var(--bs-body-color);
+
+                &:hover {
+                    background: var(--bs-gray-100);
+                }
+            }
+        }
+    }
+
+    .p-dialog-content {
+        padding: 0;
+    }
+}
+
+.confirm-add-dialog__icon {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+
+.confirm-add-dialog__text {
+    font-size: 0.9375rem;
+    color: var(--bs-secondary-color);
+    line-height: 1.7;
+
+    a {
+        color: var(--p-primary-color);
+        text-decoration: underline;
+        font-weight: 600;
+    }
+}
+
+.confirm-add-dialog__question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bs-body-color);
+}
+
+:host ::ng-deep .success-add-dialog {
+    overflow: hidden;
+
+    .p-dialog-header {
+        display: none;
+    }
+
+    .p-dialog-content {
+        padding: 0;
+    }
+}
+
+.success-add-dialog__image {
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.success-add-dialog__text {
+    font-size: 0.9375rem;
+    color: var(--bs-secondary-color);
+    line-height: 1.7;
+}

@@ -37,9 +37,8 @@
 /* Dialog layout */
 .add-vehicle-dialog {
     &__hero {
-        background: var(--brand-gradient-primary);
         position: relative;
-        padding: 2.5rem 0;
+        padding: 2.5rem 0 1rem;
 
         &::before,
         &::after {
@@ -69,15 +68,10 @@
 
         /* typography tweaks */
         ::ng-deep .add-vehicle-dialog__title {
-            font-size: 32px !important;
-            font-weight: 500 !important;
-            color: var(--p-primary-contrast-color) !important;
+            color: var(--p-primary-color);
         }
 
         ::ng-deep .add-vehicle-dialog__subtitle {
-            font-size: 14px !important;
-            font-weight: 500 !important;
-            color: var(--p-primary-contrast-color) !important;
             opacity: 0.8;
         }
     }
@@ -100,11 +94,11 @@
         justify-content: center;
         gap: 0.5rem;
         padding: 1rem;
-        background: var(--p-content-background, var(--bs-body-bg));
+        background: var(--p-primary-brand-50);
         border: 1px solid var(--p-content-border-color);
+        border-color: color-mix(in srgb, var(--p-primary-color) 12%, transparent);
         border-radius: var(--bs-border-radius-lg);
         cursor: pointer;
-        color: var(--p-primary-contrast-color);
         position: relative;
         transition:
             border-color 0.2s ease,
@@ -118,7 +112,7 @@
         &::before {
             position: absolute;
             content: '';
-            background: color-mix(in srgb, var(--p-primary-800) 8%, transparent);
+            background: color-mix(in srgb, var(--p-primary-800) 6%, transparent);
             width: 3.5rem;
             height: 3.5rem;
             top: 0;
@@ -140,19 +134,6 @@
                 font-size: var(--p-icon-size-md);
             }
         }
-    }
-}
-
-/* option variants */
-.brand-gradient-secondary-color {
-    background: var(--brand-gradient-secondary);
-}
-
-.brand-gradient-third-color {
-    background: var(--brand-gradient-third);
-
-    .add-vehicle-dialog__option-icon {
-        background-color: var(--p-primary-brand-500);
     }
 }
 

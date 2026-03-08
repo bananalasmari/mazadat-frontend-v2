@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
 import { TranslatePipe } from '../../../core/i18n/translate.pipe';
 import { TranslationService } from '../../../core/i18n/translation.service';
 import { TypographyComponent } from '../../../shared/ui/atoms/typography/typography.component';
@@ -19,6 +20,7 @@ export interface StepDef {
   standalone: true,
   imports: [
     RouterLink,
+    DialogModule,
     TranslatePipe,
     TypographyComponent,
     ButtonComponent,
@@ -30,8 +32,11 @@ export interface StepDef {
 })
 export class AddVehicleSingle {
   private readonly i18n = inject(TranslationService);
+  private readonly router = inject(Router);
 
   readonly currentStep = signal(0);
+  readonly confirmDialogVisible = signal(false);
+  readonly successDialogVisible = signal(false);
   readonly identifierType = signal<string | null>(null);
   readonly identifierValue = signal<string>('');
   readonly displayLocation = signal<string>('mazadat');
@@ -114,6 +119,20 @@ export class AddVehicleSingle {
         });
       }, 160);
     }
+  }
+
+  openConfirmDialog(): void {
+    this.confirmDialogVisible.set(true);
+  }
+
+  confirmAddVehicle(): void {
+    this.confirmDialogVisible.set(false);
+    this.successDialogVisible.set(true);
+  }
+
+  closeSuccessDialog(): void {
+    this.successDialogVisible.set(false);
+    this.router.navigate(['/vehicles']);
   }
 
 }
