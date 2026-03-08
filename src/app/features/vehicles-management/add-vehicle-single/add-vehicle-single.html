@@ -202,12 +202,239 @@
             </div>
             }
             @case (3) {
-            <div class="card">
+            <div class="card mb-4">
                 <div class="card-header">
-                    <app-typography tag="h3" variant="h5" weight="bold" [text]="'vehiclesManagement.addSingle.step4' | t" extraClass="mb-0" />
+                    <app-typography tag="h3" variant="h5" weight="bold" [text]="'vehiclesManagement.addSingle.trafficData' | t" extraClass="mb-0" />
                 </div>
                 <div class="card-body p-3 p-md-4">
-                    <p class="text-muted">{{ 'vehiclesManagement.addSingle.step4Desc' | t }}</p>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.plateType' | t }}</span>
+                                <span class="confirm-field__value">{{ 'vehiclesManagement.addSingle.private' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.plateNumber' | t }}</span>
+                                <span class="confirm-field__value">أ ب ح 1234</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.plateSource' | t }}</span>
+                                <span class="confirm-field__value">{{ 'vehiclesManagement.addSingle.cityRiyadh' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.chassisNumberLabel' | t }}</span>
+                                <span class="confirm-field__value">KHG928928292</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.engineNumber' | t }}</span>
+                                <span class="confirm-field__value">ENG123456789</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.vehicleStatus' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.registered' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.registrationType' | t }}</span>
+                                <span class="confirm-field__value">{{ 'vehiclesManagement.addSingle.individual' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.registrationStatus' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.valid' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.registrationExpiry' | t }}</span>
+                                <span class="confirm-field__value">2025-12-31</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.insuranceStatus' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.valid' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.insuranceExpiry' | t }}</span>
+                                <span class="confirm-field__value">2025-06-30</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.ownersCount' | t }}</span>
+                                <span class="confirm-field__value">2</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.pledgeStatus' | t }}</span>
+                                <span class="badge bg-danger-subtle text-danger">{{ 'vehiclesManagement.addSingle.notAvailable' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.hasReport' | t }}</span>
+                                <span class="badge bg-danger-subtle text-danger">{{ 'vehiclesManagement.addSingle.notAvailable' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.ownershipTransfer' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.available' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.hasViolations' | t }}</span>
+                                <span class="badge bg-danger-subtle text-danger">{{ 'vehiclesManagement.addSingle.notAvailable' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.inspectionStatus' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.valid' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.inspectionDate' | t }}</span>
+                                <span class="confirm-field__value">2025-06-30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <app-typography tag="h3" variant="h5" weight="bold" [text]="'vehiclesManagement.addSingle.vehicleData' | t" extraClass="mb-0" />
+                </div>
+                <div class="card-body p-3 p-md-4">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.manufacturer' | t }}</span>
+                                <span class="confirm-field__value">تويوتا</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.model' | t }}</span>
+                                <span class="confirm-field__value">كامري</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.trim' | t }}</span>
+                                <span class="confirm-field__value">ستاندر</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.year' | t }}</span>
+                                <span class="confirm-field__value">2022</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.vehicleType' | t }}</span>
+                                <span class="confirm-field__value">سيدان</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.color' | t }}</span>
+                                <span class="confirm-field__value">فضي</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.fuelType' | t }}</span>
+                                <span class="confirm-field__value">بنزين</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.transmissionType' | t }}</span>
+                                <span class="confirm-field__value">أوتوماتيك</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.engineCapacity' | t }}</span>
+                                <span class="confirm-field__value">2.5</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.cylindersCount' | t }}</span>
+                                <span class="confirm-field__value">4</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.driveSystem' | t }}</span>
+                                <span class="confirm-field__value">دفع أمامي</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.doorsCount' | t }}</span>
+                                <span class="confirm-field__value">4</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.seatsCount' | t }}</span>
+                                <span class="confirm-field__value">4</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.countryOfOrigin' | t }}</span>
+                                <span class="confirm-field__value">🇯🇵 اليابان</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.vehicleStatus' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.available' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.pledgeStatus' | t }}</span>
+                                <span class="badge bg-danger-subtle text-danger">{{ 'vehiclesManagement.addSingle.notAvailable' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.hasViolations' | t }}</span>
+                                <span class="badge bg-danger-subtle text-danger">{{ 'vehiclesManagement.addSingle.notAvailable' | t }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="confirm-field">
+                                <span class="confirm-field__label">{{ 'vehiclesManagement.addSingle.ownershipTransfer' | t }}</span>
+                                <span class="badge bg-success-subtle text-success">{{ 'vehiclesManagement.addSingle.working' | t }}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             }
@@ -221,6 +448,8 @@
                 }
                 @if (currentStep()
                 < steps.length - 1) { <app-button variant="primary" size="lg" [label]="'vehiclesManagement.addSingle.next' | t" icon="pi pi-chevron-left" iconPosition="end" extraClass="px-5" [disabled]="!isCurrentStepValid()" (clicked)="onNext()" />
+                } @else {
+                <app-button variant="primary" size="lg" [label]="'vehiclesManagement.addSingle.addVehicleBtn' | t" icon="pi pi-check" iconPosition="start" extraClass="px-5" />
                 }
             </div>
         </div>
