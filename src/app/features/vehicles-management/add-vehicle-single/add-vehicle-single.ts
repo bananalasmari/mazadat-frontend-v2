@@ -5,9 +5,11 @@ import { TranslationService } from '../../../core/i18n/translation.service';
 import { TypographyComponent } from '../../../shared/ui/atoms/typography/typography.component';
 import { ButtonComponent } from '../../../shared/ui/atoms/button/button.component';
 import { DropdownComponent, type DropdownOption } from '../../../shared/ui/atoms/dropdown/dropdown.component';
+import { InputComponent } from '../../../shared/ui/atoms/input/input.component';
 
 export interface StepDef {
   label: string;
+  description: string;
   icon: string;
   optional: boolean;
 }
@@ -21,6 +23,7 @@ export interface StepDef {
     TypographyComponent,
     ButtonComponent,
     DropdownComponent,
+    InputComponent,
   ],
   templateUrl: './add-vehicle-single.html',
   styleUrl: './add-vehicle-single.scss',
@@ -30,6 +33,7 @@ export class AddVehicleSingle {
 
   readonly currentStep = signal(0);
   readonly identifierType = signal<string | null>(null);
+  readonly identifierValue = signal<string>('');
   readonly displayLocation = signal<string>('mazadat');
   readonly vehicleCity = signal<string | null>(null);
 
@@ -54,10 +58,10 @@ export class AddVehicleSingle {
   get steps(): StepDef[] {
     const t = (k: string) => this.i18n.t(k);
     return [
-      { label: t('vehiclesManagement.addSingle.step1'), icon: 'pi pi-file-edit', optional: false },
-      { label: t('vehiclesManagement.addSingle.step2'), icon: 'pi pi-tag', optional: true },
-      { label: t('vehiclesManagement.addSingle.step3'), icon: 'pi pi-box', optional: true },
-      { label: t('vehiclesManagement.addSingle.step4'), icon: 'pi pi-check-circle', optional: false },
+      { label: t('vehiclesManagement.addSingle.step1'), description: t('vehiclesManagement.addSingle.step1Desc'), icon: 'assets/icons/stepper/step-basic.svg', optional: false },
+      { label: t('vehiclesManagement.addSingle.step2'), description: t('vehiclesManagement.addSingle.step2Desc'), icon: 'assets/icons/stepper/step-price.svg', optional: true },
+      { label: t('vehiclesManagement.addSingle.step3'), description: t('vehiclesManagement.addSingle.step3Desc'), icon: 'assets/icons/stepper/step-services.svg', optional: true },
+      { label: t('vehiclesManagement.addSingle.step4'), description: t('vehiclesManagement.addSingle.step4Desc'), icon: 'assets/icons/stepper/step-confirm.svg', optional: false },
     ];
   }
 
