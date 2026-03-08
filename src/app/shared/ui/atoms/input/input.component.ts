@@ -29,47 +29,75 @@ let nextId = 0;
         </label>
       }
 
-      <div class="input-wrapper" [class.input-group]="hasIcons()" [class.input-group-sm]="hasIcons() && size() === 'sm'" [class.input-group-lg]="hasIcons() && size() === 'lg'">
-        @if (iconLeft()) {
-          <span class="input-group-text" aria-hidden="true">
-            <i [class]="iconLeft()"></i>
-          </span>
-        }
+      @if (iconLeftSvg()) {
+        <div class="input-wrapper" style="position:relative">
+          <input
+            pInputText
+            [id]="resolvedId()"
+            [type]="type()"
+            [class.form-control-lg]="size() === 'lg'"
+            [class.form-control-sm]="size() === 'sm'"
+            [class.p-invalid]="!!error()"
+            [class.is-invalid]="!!error()"
+            [class]="inputClasses()"
+            [attr.placeholder]="placeholder()"
+            [attr.autocomplete]="autocomplete()"
+            [attr.aria-label]="ariaLabel()"
+            [attr.aria-invalid]="error() ? 'true' : null"
+            [attr.maxlength]="maxlength()"
+            [attr.inputmode]="inputmode()"
+            [required]="required()"
+            [readonly]="readonly()"
+            [disabled]="isDisabled()"
+            [value]="_value()"
+            (input)="onInput($event)"
+            (blur)="onBlur()"
+          />
+          <img [src]="iconLeftSvg()!" alt="" aria-hidden="true" style="position:absolute;top:50%;inset-inline-end:0.875rem;transform:translateY(-50%);width:1.25rem;height:1.25rem;object-fit:contain;pointer-events:none" />
+        </div>
+      } @else {
+        <div class="input-wrapper" [class.input-group]="hasIcons()" [class.input-group-sm]="hasIcons() && size() === 'sm'" [class.input-group-lg]="hasIcons() && size() === 'lg'">
+          @if (iconLeft()) {
+            <span class="input-group-text" aria-hidden="true">
+              <i [class]="iconLeft()"></i>
+            </span>
+          }
 
-        <input
-          pInputText
-          [id]="resolvedId()"
-          [type]="type()"
-          [class.form-control-lg]="size() === 'lg'"
-          [class.form-control-sm]="size() === 'sm'"
-          [class.p-invalid]="!!error()"
-          [class.is-invalid]="!!error()"
-          [class]="inputClasses()"
-          [attr.placeholder]="placeholder()"
-          [attr.autocomplete]="autocomplete()"
-          [attr.aria-label]="ariaLabel()"
-          [attr.aria-invalid]="error() ? 'true' : null"
-          [attr.maxlength]="maxlength()"
-          [attr.inputmode]="inputmode()"
-          [required]="required()"
-          [readonly]="readonly()"
-          [disabled]="isDisabled()"
-          [value]="_value()"
-          (input)="onInput($event)"
-          (blur)="onBlur()"
-        />
+          <input
+            pInputText
+            [id]="resolvedId()"
+            [type]="type()"
+            [class.form-control-lg]="size() === 'lg'"
+            [class.form-control-sm]="size() === 'sm'"
+            [class.p-invalid]="!!error()"
+            [class.is-invalid]="!!error()"
+            [class]="inputClasses()"
+            [attr.placeholder]="placeholder()"
+            [attr.autocomplete]="autocomplete()"
+            [attr.aria-label]="ariaLabel()"
+            [attr.aria-invalid]="error() ? 'true' : null"
+            [attr.maxlength]="maxlength()"
+            [attr.inputmode]="inputmode()"
+            [required]="required()"
+            [readonly]="readonly()"
+            [disabled]="isDisabled()"
+            [value]="_value()"
+            (input)="onInput($event)"
+            (blur)="onBlur()"
+          />
 
-        @if (iconRight()) {
-          <span class="input-group-text" aria-hidden="true">
-            <i [class]="iconRight()"></i>
-          </span>
-        }
-      </div>
+          @if (iconRight()) {
+            <span class="input-group-text" aria-hidden="true">
+              <i [class]="iconRight()"></i>
+            </span>
+          }
+        </div>
+      }
 
       @if (error()) {
         <p-message severity="error" [icon]="errorIcon()" [text]="error()!" size="small" styleClass="mt-1 w-100" />
       } @else if (helpText()) {
-        <div class="form-text">{{ helpText() }}</div>
+        <div class="form-text"><i class="pi pi-info-circle me-1"></i>{{ helpText() }}</div>
       }
     </div>
   `,
@@ -95,12 +123,15 @@ export class InputComponent implements ControlValueAccessor {
   readonly errorIcon = input<string>('pi pi-times-circle');
 
   readonly iconLeft = input<string | null>(null);
+  readonly iconLeftSvg = input<string | null>(null);
   readonly iconRight = input<string | null>(null);
 
   /** Max length for the input (optional). */
   readonly maxlength = input<number | null>(null);
   /** Input mode (e.g. "email", "text", "numeric"). */
   readonly inputmode = input<string | null>(null);
+  /** When true, strips all non-digit characters on input. */
+  readonly numericOnly = input(false);
 
   readonly containerClass = input<string>('mb-3');
   readonly inputClass = input<string>('');
@@ -149,8 +180,13 @@ export class InputComponent implements ControlValueAccessor {
 
   protected onInput(event: Event): void {
     const el = event.target as HTMLInputElement;
-    this._value.set(el.value);
-    this.onChange(el.value);
+    let val = el.value;
+    if (this.numericOnly()) {
+      val = val.replace(/\D/g, '');
+      if (val !== el.value) el.value = val;
+    }
+    this._value.set(val);
+    this.onChange(val);
   }
 
   protected onBlur(): void {
@@ -158,4 +194,3 @@ export class InputComponent implements ControlValueAccessor {
     this.blurred.emit();
   }
 }
-

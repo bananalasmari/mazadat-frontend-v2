@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../../core/i18n/translate.pipe';
 import { TranslationService } from '../../../core/i18n/translation.service';
@@ -36,6 +36,25 @@ export class AddVehicleSingle {
   readonly identifierValue = signal<string>('');
   readonly displayLocation = signal<string>('mazadat');
   readonly vehicleCity = signal<string | null>(null);
+  readonly animating = signal(false);
+
+  readonly auctionStartPrice = signal<string>('');
+  readonly instantApprovalPrice = signal<string>('');
+  readonly directSalePrice = signal<string>('');
+
+  readonly isCurrentStepValid = computed(() => {
+    switch (this.currentStep()) {
+      case 0:
+        return !!this.identifierType() && !!this.displayLocation() && !!this.vehicleCity();
+      case 1:
+      case 2:
+        return true;
+      case 3:
+        return true;
+      default:
+        return false;
+    }
+  });
 
   get identifierTypeOptions(): DropdownOption[] {
     const t = (k: string) => this.i18n.t(k);
@@ -66,6 +85,31 @@ export class AddVehicleSingle {
   }
 
   onNext(): void {
-    // TODO: implement step navigation
+    if (!this.isCurrentStepValid() || this.animating()) return;
+    const next = this.currentStep() + 1;
+    if (next < this.steps.length) {
+      this.animating.set(true);
+      setTimeout(() => {
+        this.currentStep.set(next);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => this.animating.set(false));
+        });
+      }, 160);
+    }
   }
+
+  onPrevious(): void {
+    if (this.animating()) return;
+    const prev = this.currentStep() - 1;
+    if (prev >= 0) {
+      this.animating.set(true);
+      setTimeout(() => {
+        this.currentStep.set(prev);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => this.animating.set(false));
+        });
+      }, 160);
+    }
+  }
+
 }

@@ -48,22 +48,38 @@
     min-width: 0;
 }
 
+.add-vehicle-stepper__icon-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
 .add-vehicle-stepper__icon {
     width: 4.5rem;
     height: 4.5rem;
     display: block;
     object-fit: contain;
-    margin-bottom: 0.5rem;
     filter: grayscale(1);
     opacity: 0.4;
-    transition:
-        filter 0.2s ease,
-        opacity 0.2s ease;
+    transition: filter 0.2s ease, opacity 0.2s ease;
 
     .add-vehicle-stepper__step--active & {
         filter: none;
         opacity: 1;
     }
+
+    .add-vehicle-stepper__step--completed & {
+        filter: none;
+        opacity: 0.5;
+    }
+}
+
+.add-vehicle-stepper__checkmark {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .add-vehicle-stepper__connector {
@@ -88,15 +104,21 @@
     &::before {
         right: 0;
         left: 50%;
+        z-index: 2;
     }
 
     &::after {
         left: 0;
-        right: 50%;
+        right: 0;
     }
 
     &--active::before {
         background: var(--p-primary-vivid-sky-500);
+    }
+
+    &--completed::before,
+    &--completed::after {
+        background: var(--p-success-light);
     }
 }
 
@@ -145,6 +167,17 @@
     color: var(--bs-secondary-color);
     line-height: 1.5;
     margin-inline-start: 1.6rem;
+}
+
+.step-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    &--fading {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
 }
 
 :host ::ng-deep .add-vehicle-single__video-btn {

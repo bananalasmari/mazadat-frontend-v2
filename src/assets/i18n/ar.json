@@ -188,7 +188,18 @@
             "cityRiyadh": "الرياض",
             "cityJeddah": "جدة",
             "cityDammam": "الدمام",
-            "next": "التالي"
+            "next": "التالي",
+            "previous": "السابق",
+            "priceSettingsTitle": "إعدادات الأسعار (اختياري)",
+            "priceSettingsBanner": "قم بضبط إعدادات الأسعار الآن: حدد سعر البداية وسعر البيع الفوري لتحقيق أقصى استفادة من مزاداتك.",
+            "auctionStartPrice": "سعر بداية المزاد",
+            "auctionStartPricePlaceholder": "ادخل سعر بداية المزاد",
+            "auctionStartPriceHelp": "السعر الذي إذا تجاوزه المزاد لا يتم الرجوع فيه للبائع للموافقة، وتُرسى المركبة مباشرة على المشتري بعد انتهاء المزاد",
+            "instantApprovalPrice": "سعر الموافقة الفورية",
+            "instantApprovalPricePlaceholder": "سعر الموافقة الفورية",
+            "instantApprovalPriceHelp": "سعر ثابتاً يمكن عنده بيع المركبة مباشرة دون انتظار انتهاء المزاد",
+            "directSalePrice": "سعر البيع المباشر",
+            "directSalePricePlaceholder": "ادخل سعر البيع المباشر"
         },
         "addVehicleDialog": {
             "title": "إضافة مركبة جديدة",

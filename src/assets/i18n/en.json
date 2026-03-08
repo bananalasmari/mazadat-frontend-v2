@@ -173,7 +173,18 @@
       "cityRiyadh": "Riyadh",
       "cityJeddah": "Jeddah",
       "cityDammam": "Dammam",
-      "next": "Next"
+      "next": "Next",
+      "previous": "Previous",
+      "priceSettingsTitle": "Price Settings",
+      "priceSettingsBanner": "Configure your price settings now: set the starting price and instant sale price to get the most out of your auctions.",
+      "auctionStartPrice": "Auction Starting Price",
+      "auctionStartPricePlaceholder": "Enter auction starting price",
+      "auctionStartPriceHelp": "The price above which the auction is finalized without seller approval, and the vehicle is awarded directly to the buyer after the auction ends",
+      "instantApprovalPrice": "Instant Approval Price",
+      "instantApprovalPricePlaceholder": "Instant approval price",
+      "instantApprovalPriceHelp": "A fixed price at which the vehicle can be sold immediately without waiting for the auction to end",
+      "directSalePrice": "Direct Sale Price",
+      "directSalePricePlaceholder": "Enter direct sale price"
     },
     "addVehicleDialog": {
       "title": "Add Vehicle",
